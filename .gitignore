@@ -1,0 +1,14 @@
+runs/
+output/*.twbx
+knowledge/votd/twbx/
+.DS_Store
+__pycache__/
+.env
+knowledge/interactivity/mm-beeswarm/Data/
+output/mm-original.twbx
+knowledge/interactivity/mm-beeswarm/*.log
+knowledge/votd/
+knowledge/xml-patterns/
+output/
+hyperd.log
+*.hyper

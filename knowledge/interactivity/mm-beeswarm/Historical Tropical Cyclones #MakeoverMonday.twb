@@ -1,0 +1,1772 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <GroupAction />
+    <GroupActionAddRemove />
+    <LayerControlWidget />
+    <Layers />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='HistoricalTropicalCyclonesMakeoverMonday' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='pYear Bin' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='5.'>
+        <calculation class='tableau' formula='5.' />
+      </column>
+    </datasource>
+    <datasource caption='ibtracs_lite (ibtracs_lite)' inline='true' name='federated.0zcnr480r259t818jinqr0b9q93b' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ibtracs_lite' name='excel-direct.0ed0txh0m84fad13jh25p029onea'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/blakefeiza/Downloads/ibtracs_lite.xlsx' interpretationMode='0' password='' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.0ed0txh0m84fad13jh25p029onea' name='ibtracs_lite' table='[ibtracs_lite$]' type='table'>
+          <columns gridOrigin='A1:Q10001:no:A1:Q10001:0' header='yes' outcome='6'>
+            <column datatype='string' name='SID' ordinal='0' />
+            <column datatype='integer' name='SEASON (YEAR)' ordinal='1' />
+            <column datatype='string' name='BASIN' ordinal='2' />
+            <column datatype='string' name='SUBBASIN' ordinal='3' />
+            <column datatype='string' name='NAME' ordinal='4' />
+            <column datatype='datetime' date-parse-format='dd/MM/yyyy HH:mm|#|#|yyyy-MM-dd HH:mm:ss' name='ISO_TIME' ordinal='5' />
+            <column datatype='string' name='NATURE' ordinal='6' />
+            <column datatype='real' name='LAT' ordinal='7' />
+            <column datatype='real' name='LON' ordinal='8' />
+            <column datatype='integer' name='WMO_WIND (KTS)' ordinal='9' />
+            <column datatype='integer' name='WMO_PRES (MB)' ordinal='10' />
+            <column datatype='string' name='WMO_AGENCY' ordinal='11' />
+            <column datatype='integer' name='DIST2LAND (KM)' ordinal='12' />
+            <column datatype='integer' name='LANDFALL (KM)' ordinal='13' />
+            <column datatype='integer' name='USA_WIND (KTS)' ordinal='14' />
+            <column datatype='integer' name='USA_PRES (MB)' ordinal='15' />
+            <column datatype='integer' name='USA_SSHS' ordinal='16' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:Q10001:no:A1:Q10001:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SID</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SID]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>SID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEASON (YEAR)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SEASON (YEAR)]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>SEASON (YEAR)</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BASIN</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BASIN]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>BASIN</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SUBBASIN</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[SUBBASIN]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>SUBBASIN</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NAME</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NAME]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>NAME</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ISO_TIME</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ISO_TIME]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>ISO_TIME</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NATURE</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NATURE]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>NATURE</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LAT</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LAT]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>LAT</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LON</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[LON]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>LON</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WMO_WIND (KTS)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WMO_WIND (KTS)]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>WMO_WIND (KTS)</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WMO_PRES (MB)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WMO_PRES (MB)]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>WMO_PRES (MB)</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WMO_AGENCY</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[WMO_AGENCY]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>WMO_AGENCY</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DIST2LAND (KM)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DIST2LAND (KM)]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>DIST2LAND (KM)</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>LANDFALL (KM)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[LANDFALL (KM)]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>LANDFALL (KM)</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>USA_WIND (KTS)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[USA_WIND (KTS)]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>USA_WIND (KTS)</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>USA_PRES (MB)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[USA_PRES (MB)]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>USA_PRES (MB)</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>USA_SSHS</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[USA_SSHS]</local-name>
+            <parent-name>[ibtracs_lite]</parent-name>
+            <remote-alias>USA_SSHS</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Basin' datatype='string' name='[BASIN]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='%null%' value='Atlantic' />
+          <alias key='&quot;EP&quot;' value='Eastern North Pacific' />
+          <alias key='&quot;NI&quot;' value='North Indian' />
+          <alias key='&quot;SA&quot;' value='South Atlantic' />
+          <alias key='&quot;SI&quot;' value='South Indian' />
+          <alias key='&quot;SP&quot;' value='Southern Pacific' />
+          <alias key='&quot;WP&quot;' value='Western North Pacific' />
+        </aliases>
+      </column>
+      <column aggregation='Sum' caption='Year' datatype='integer' name='[Calculation_0576234539573248]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATEPART(&apos;year&apos;, [ISO_TIME])' />
+      </column>
+      <column caption='Decade' datatype='string' name='[Calculation_0576234539634689]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='LEFT( STR([Calculation_0576234539573248]), 3) + &apos;0s&apos;' />
+      </column>
+      <column caption='Storms per Bin' datatype='integer' name='[Calculation_0576234541039619]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// Storms per Bin&#10;{ FIXED [Year (bin)]: COUNTD([SID]) }' />
+      </column>
+      <column caption='Beeswarm' datatype='real' name='[Calculation_0576234541436933]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// Beeswarm&#10;// CASE 1: If a bin has only 1 job, then plot them on Y=0&#10;IF ATTR([Calculation_0576234541039619]) = 1 THEN MIN(0)&#10;&#10;// CASE 2: If the bin has an odd number of records, then plot based on the record number in that bin&#10;ELSEIF ATTR([Calculation_0576234541039619])%2 = 1 &#10;THEN (&#10;    IF INDEX() = 1 THEN MIN(0) // Place the first on Y=0&#10;    ELSEIF INDEX()%2 = 0 THEN INDEX()*0.5 // Place even records in an odd bin above Y=0&#10;    ELSEIF INDEX()%2 = 1 THEN -(INDEX()-1)*0.5 // Place odd records in an odd bin below Y=0&#10;    END&#10;    )&#10;&#10;// CASE 3: If the bin has an even number of records, then plot them based on the record number in that bin&#10;ELSEIF ATTR([Calculation_0576234541039619])%2 = 0&#10;THEN (&#10;    IF INDEX() = 1 THEN 0.5  // Place the first on Y=0.5 (none in the middle)&#10;    ELSEIF INDEX()%2 = 0 THEN -INDEX()*0.5 + 0.5 // Place even records in an odd bin below Y=0&#10;    ELSEIF INDEX()%2 = 1 THEN INDEX()*0.5 // Place odd records in an odd bin above Y=0&#10;    END&#10;    )&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column aggregation='Sum' caption='Peak Intensity per SID' datatype='integer' name='[Calculation_0576234546122761]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='{ FIXED [SID]: MAX([USA_SSHS]) }' />
+      </column>
+      <column caption='Start Date per SID' datatype='date' datatype-customized='true' default-format='*m/d' name='[Calculation_0576234548428812]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE({ FIXED [SID]: MIN(DATETRUNC(&apos;day&apos;, [ISO_TIME])) })' />
+      </column>
+      <column caption='Duration (Days)' datatype='integer' name='[Calculation_0576234548781070]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Calculation_0576234548428812], [Start Date per SID (copy)_0576234548686861])+1' />
+      </column>
+      <column caption='United States' datatype='string' name='[Calculation_0576234549755920]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+        <calculation class='tableau' formula='&apos;United States&apos;' />
+      </column>
+      <column caption='Dist2Land (Km)' datatype='integer' name='[DIST2LAND (KM)]' role='measure' type='quantitative' />
+      <column caption='Iso Time' datatype='datetime' datatype-customized='true' name='[ISO_TIME]' role='dimension' type='ordinal' />
+      <column caption='Landfall (Km)' datatype='integer' name='[LANDFALL (KM)]' role='measure' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[LAT]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' datatype='real' name='[LON]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+      <column caption='Nature' datatype='string' name='[NATURE]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;DS&quot;' value='Disturbance' />
+          <alias key='&quot;ET&quot;' value='Extratropical' />
+          <alias key='&quot;MX&quot;' value='Mixture' />
+          <alias key='&quot;NR&quot;' value='Not Reported' />
+          <alias key='&quot;SS&quot;' value='Subtropical' />
+          <alias key='&quot;TS&quot;' value='Tropical' />
+        </aliases>
+      </column>
+      <column caption='Season (Year)' datatype='integer' name='[SEASON (YEAR)]' role='dimension' type='quantitative' />
+      <column datatype='string' name='[SID]' role='dimension' type='nominal' />
+      <column caption='Subbasin' datatype='string' name='[SUBBASIN]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;AS&quot;' value='Arabian Sea' />
+          <alias key='&quot;BB&quot;' value='Bay of Bengal' />
+          <alias key='&quot;CP&quot;' value='Central Pacific' />
+          <alias key='&quot;CS&quot;' value='Caribbean Sea' />
+          <alias key='&quot;EA&quot;' value='Eastern Australia' />
+          <alias key='&quot;GM&quot;' value='Gulf of Mexico' />
+          <alias key='&quot;MM&quot;' value='Missing' />
+          <alias key='&quot;WA&quot;' value='Western Australia' />
+        </aliases>
+      </column>
+      <column caption='End Date per SID' datatype='date' datatype-customized='true' default-format='*m/d' name='[Start Date per SID (copy)_0576234548686861]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE({ FIXED [SID]: MAX(DATETRUNC(&apos;day&apos;, [ISO_TIME])) })' />
+      </column>
+      <column caption='Usa Pres (Mb)' datatype='integer' name='[USA_PRES (MB)]' role='measure' type='quantitative' />
+      <column aggregation='Max' caption='Usa Sshs' datatype='integer' name='[USA_SSHS]' role='measure' type='quantitative' />
+      <column caption='Usa Wind (Kts)' datatype='integer' name='[USA_WIND (KTS)]' role='measure' type='quantitative' />
+      <column caption='Wmo Agency' datatype='string' name='[WMO_AGENCY]' role='dimension' type='nominal' />
+      <column caption='Wmo Pres (Mb)' datatype='integer' name='[WMO_PRES (MB)]' role='measure' type='quantitative' />
+      <column caption='Wmo Wind (Kts)' datatype='integer' name='[WMO_WIND (KTS)]' role='measure' type='quantitative' />
+      <column aggregation='None' caption='Year (bin)' datatype='integer' name='[Year (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='0' formula='[Calculation_0576234539573248]' peg='0' size-parameter='[Parameters].[Parameter 1]' />
+      </column>
+      <column caption='ibtracs_lite' datatype='table' name='[__tableau_internal_object_id__].[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_0576234546122761]' derivation='None' name='[none:Calculation_0576234546122761:ok]' pivot='key' type='ordinal' />
+      <group caption='Selected SID Set' name='[Set 1]' name-style='unqualified' user:ui-builder='lasso-group'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='member' level='[Calculation_0576234546122761]' member='5' />
+          <groupfilter function='crossjoin'>
+            <groupfilter function='member' level='[SID]' member='&quot;2024181N09320&quot;' />
+            <groupfilter function='member' level='[Year (bin)]' member='404' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <folders-common>
+        <folder name='00. Data Source'>
+          <folder-item name='[BASIN]' type='field' />
+          <folder-item name='[DIST2LAND (KM)]' type='field' />
+          <folder-item name='[ISO_TIME]' type='field' />
+          <folder-item name='[LANDFALL (KM)]' type='field' />
+          <folder-item name='[LAT]' type='field' />
+          <folder-item name='[LON]' type='field' />
+          <folder-item name='[NAME]' type='field' />
+          <folder-item name='[NATURE]' type='field' />
+          <folder-item name='[SEASON (YEAR)]' type='field' />
+          <folder-item name='[SID]' type='field' />
+          <folder-item name='[SUBBASIN]' type='field' />
+          <folder-item name='[USA_PRES (MB)]' type='field' />
+          <folder-item name='[USA_SSHS]' type='field' />
+          <folder-item name='[USA_WIND (KTS)]' type='field' />
+          <folder-item name='[WMO_AGENCY]' type='field' />
+          <folder-item name='[WMO_PRES (MB)]' type='field' />
+          <folder-item name='[WMO_WIND (KTS)]' type='field' />
+          <folder-item name='[__tableau_internal_object_id__].[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]' type='field' />
+        </folder>
+        <folder name='01. Calcs'>
+          <folder-item name='[Calculation_0576234539573248]' type='field' />
+          <folder-item name='[Calculation_0576234539634689]' type='field' />
+        </folder>
+        <folder name='02. Beeswarm Stuff'>
+          <folder-item name='[Calculation_0576234541039619]' type='field' />
+          <folder-item name='[Calculation_0576234541436933]' type='field' />
+          <folder-item name='[Year (bin)]' type='field' />
+        </folder>
+        <folder name='03. Tooltip Stuff'>
+          <folder-item name='[Calculation_0576234548428812]' type='field' />
+          <folder-item name='[Calculation_0576234548781070]' type='field' />
+          <folder-item name='[Start Date per SID (copy)_0576234548686861]' type='field' />
+        </folder>
+      </folders-common>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Downloads/ibtracs_lite (ibtracs_lite).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='07/10/2026 01:13:49 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table'>
+            <columns>
+              <column datatype='datetime' date-parse-format='dd/MM/yyyy HH:mm|#|#|yyyy-MM-dd HH:mm:ss' name='ISO_TIME' />
+            </columns>
+          </relation>
+          <refresh>
+            <refresh-event add-from-file-path='ibtracs_lite (ibtracs_lite)' increment-value='%null%' refresh-type='create' rows-inserted='724816' timestamp-start='2026-07-10 13:13:12.595' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>SID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>60103</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEASON (YEAR)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SEASON (YEAR)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SEASON (YEAR)</remote-alias>
+              <ordinal>1</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>238</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>BASIN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[BASIN]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>BASIN</remote-alias>
+              <ordinal>2</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SUBBASIN</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[SUBBASIN]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>SUBBASIN</remote-alias>
+              <ordinal>3</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NAME</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NAME]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>NAME</remote-alias>
+              <ordinal>4</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7140</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ISO_TIME</remote-name>
+              <remote-type>7</remote-type>
+              <local-name>[ISO_TIME]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>ISO_TIME</remote-alias>
+              <ordinal>5</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NATURE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NATURE]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>NATURE</remote-alias>
+              <ordinal>6</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LAT</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[LAT]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LAT</remote-alias>
+              <ordinal>7</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2678</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LON</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[LON]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LON</remote-alias>
+              <ordinal>8</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>13437</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WMO_WIND (KTS)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[WMO_WIND (KTS)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>WMO_WIND (KTS)</remote-alias>
+              <ordinal>9</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>117</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WMO_PRES (MB)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[WMO_PRES (MB)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>WMO_PRES (MB)</remote-alias>
+              <ordinal>10</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>292</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WMO_AGENCY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[WMO_AGENCY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>WMO_AGENCY</remote-alias>
+              <ordinal>11</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DIST2LAND (KM)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DIST2LAND (KM)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DIST2LAND (KM)</remote-alias>
+              <ordinal>12</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11020</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>LANDFALL (KM)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[LANDFALL (KM)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>LANDFALL (KM)</remote-alias>
+              <ordinal>13</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10405</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>USA_WIND (KTS)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[USA_WIND (KTS)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>USA_WIND (KTS)</remote-alias>
+              <ordinal>14</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>204</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>USA_PRES (MB)</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[USA_PRES (MB)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>USA_PRES (MB)</remote-alias>
+              <ordinal>15</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>299</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>USA_SSHS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[USA_SSHS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>USA_SSHS</remote-alias>
+              <ordinal>16</ordinal>
+              <family>ibtracs_lite</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='false' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_0576234546122761:ok]' palette='orange_10_0' type='palette'>
+            <map to='#9e3d22'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#b64923'>
+              <bucket>4</bucket>
+            </map>
+            <map to='#cd5622'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#e46520'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#f07c27'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#f59738'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#f7b059'>
+              <bucket>-1</bucket>
+            </map>
+            <map to='#ffc685'>
+              <bucket>-2</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='pYear Bin' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='5.'>
+          <calculation class='tableau' formula='5.' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='ibtracs_lite' id='ibtracs!lite_A60F50A8A2304DCB853B0C3E8779DB70'>
+            <properties context=''>
+              <relation connection='excel-direct.0ed0txh0m84fad13jh25p029onea' name='ibtracs_lite' table='[ibtracs_lite$]' type='table'>
+                <columns gridOrigin='A1:Q10001:no:A1:Q10001:0' header='yes' outcome='6'>
+                  <column datatype='string' name='SID' ordinal='0' />
+                  <column datatype='integer' name='SEASON (YEAR)' ordinal='1' />
+                  <column datatype='string' name='BASIN' ordinal='2' />
+                  <column datatype='string' name='SUBBASIN' ordinal='3' />
+                  <column datatype='string' name='NAME' ordinal='4' />
+                  <column datatype='datetime' date-parse-format='dd/MM/yyyy HH:mm|#|#|yyyy-MM-dd HH:mm:ss' name='ISO_TIME' ordinal='5' />
+                  <column datatype='string' name='NATURE' ordinal='6' />
+                  <column datatype='real' name='LAT' ordinal='7' />
+                  <column datatype='real' name='LON' ordinal='8' />
+                  <column datatype='integer' name='WMO_WIND (KTS)' ordinal='9' />
+                  <column datatype='integer' name='WMO_PRES (MB)' ordinal='10' />
+                  <column datatype='string' name='WMO_AGENCY' ordinal='11' />
+                  <column datatype='integer' name='DIST2LAND (KM)' ordinal='12' />
+                  <column datatype='integer' name='LANDFALL (KM)' ordinal='13' />
+                  <column datatype='integer' name='USA_WIND (KTS)' ordinal='14' />
+                  <column datatype='integer' name='USA_PRES (MB)' ordinal='15' />
+                  <column datatype='integer' name='USA_SSHS' ordinal='16' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table'>
+                <columns>
+                  <column datatype='datetime' date-parse-format='dd/MM/yyyy HH:mm|#|#|yyyy-MM-dd HH:mm:ss' name='ISO_TIME' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <edit-group-action caption='Update SID Set' name='[Action1_B49D6EE9109F465F9A8EDFB9196C0AF4]'>
+      <activation type='on-hover' />
+      <source type='all' />
+      <add-or-remove-marks value='assign' />
+      <params>
+        <param name='selection-clear-set-option' value='do-nothing' />
+        <param name='target-group' value='[federated.0zcnr480r259t818jinqr0b9q93b].[Set 1]' />
+      </params>
+    </edit-group-action>
+    <edit-group-action caption='Update Set SID Select' name='[Action2_445CC51B2FE44DB7A46F18E070D77897]'>
+      <activation type='on-select' />
+      <source dashboard='FeizaData' type='sheet' />
+      <add-or-remove-marks value='assign' />
+      <params>
+        <param name='selection-clear-set-option' value='do-nothing' />
+        <param name='target-group' value='[federated.0zcnr480r259t818jinqr0b9q93b].[Set 1]' />
+      </params>
+    </edit-group-action>
+  </actions>
+  <worksheets>
+    <worksheet name='Beeswarm Atlantic'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ibtracs_lite (ibtracs_lite)' name='federated.0zcnr480r259t818jinqr0b9q93b' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='pYear Bin' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='5.'>
+              <calculation class='tableau' formula='5.' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0zcnr480r259t818jinqr0b9q93b'>
+            <column aggregation='Sum' caption='Year' datatype='integer' name='[Calculation_0576234539573248]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATEPART(&apos;year&apos;, [ISO_TIME])' />
+            </column>
+            <column caption='Storms per Bin' datatype='integer' name='[Calculation_0576234541039619]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// Storms per Bin&#10;{ FIXED [Year (bin)]: COUNTD([SID]) }' />
+            </column>
+            <column caption='Beeswarm' datatype='real' name='[Calculation_0576234541436933]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='// Beeswarm&#10;// CASE 1: If a bin has only 1 job, then plot them on Y=0&#10;IF ATTR([Calculation_0576234541039619]) = 1 THEN MIN(0)&#10;&#10;// CASE 2: If the bin has an odd number of records, then plot based on the record number in that bin&#10;ELSEIF ATTR([Calculation_0576234541039619])%2 = 1 &#10;THEN (&#10;    IF INDEX() = 1 THEN MIN(0) // Place the first on Y=0&#10;    ELSEIF INDEX()%2 = 0 THEN INDEX()*0.5 // Place even records in an odd bin above Y=0&#10;    ELSEIF INDEX()%2 = 1 THEN -(INDEX()-1)*0.5 // Place odd records in an odd bin below Y=0&#10;    END&#10;    )&#10;&#10;// CASE 3: If the bin has an even number of records, then plot them based on the record number in that bin&#10;ELSEIF ATTR([Calculation_0576234541039619])%2 = 0&#10;THEN (&#10;    IF INDEX() = 1 THEN 0.5  // Place the first on Y=0.5 (none in the middle)&#10;    ELSEIF INDEX()%2 = 0 THEN -INDEX()*0.5 + 0.5 // Place even records in an odd bin below Y=0&#10;    ELSEIF INDEX()%2 = 1 THEN INDEX()*0.5 // Place odd records in an odd bin above Y=0&#10;    END&#10;    )&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column aggregation='Sum' caption='Peak Intensity per SID' datatype='integer' name='[Calculation_0576234546122761]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{ FIXED [SID]: MAX([USA_SSHS]) }' />
+            </column>
+            <column caption='Start Date per SID' datatype='date' datatype-customized='true' default-format='*m/d' name='[Calculation_0576234548428812]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE({ FIXED [SID]: MIN(DATETRUNC(&apos;day&apos;, [ISO_TIME])) })' />
+            </column>
+            <column caption='Duration (Days)' datatype='integer' name='[Calculation_0576234548781070]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='DATEDIFF(&apos;day&apos;, [Calculation_0576234548428812], [Start Date per SID (copy)_0576234548686861])+1' />
+            </column>
+            <column caption='MIN(STR([Year]))' datatype='string' name='[Calculation_0576234549510159]' role='measure' type='nominal' user:unnamed='Beeswarm Atlantic'>
+              <calculation class='tableau' formula='MIN(STR([Calculation_0576234539573248]))' />
+            </column>
+            <column caption='Iso Time' datatype='datetime' datatype-customized='true' name='[ISO_TIME]' role='dimension' type='ordinal' />
+            <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+            <column datatype='string' name='[SID]' role='dimension' type='nominal' />
+            <column caption='End Date per SID' datatype='date' datatype-customized='true' default-format='*m/d' name='[Start Date per SID (copy)_0576234548686861]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE({ FIXED [SID]: MAX(DATETRUNC(&apos;day&apos;, [ISO_TIME])) })' />
+            </column>
+            <column aggregation='Max' caption='Usa Sshs' datatype='integer' name='[USA_SSHS]' role='measure' type='quantitative' />
+            <column caption='Wmo Agency' datatype='string' name='[WMO_AGENCY]' role='dimension' type='nominal' />
+            <column aggregation='None' caption='Year (bin)' datatype='integer' name='[Year (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[Calculation_0576234539573248]' peg='0' size-parameter='[Parameters].[Parameter 1]' />
+            </column>
+            <column-instance column='[Calculation_0576234548428812]' derivation='Attribute' name='[attr:Calculation_0576234548428812:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[NAME]' derivation='Attribute' name='[attr:NAME:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Start Date per SID (copy)_0576234548686861]' derivation='Attribute' name='[attr:Start Date per SID (copy)_0576234548686861:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_0576234546122761]' derivation='Max' name='[max:Calculation_0576234546122761:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0576234546122761]' derivation='None' name='[none:Calculation_0576234546122761:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[SID]' derivation='None' name='[none:SID:nk]' pivot='key' type='nominal' />
+            <column-instance column='[WMO_AGENCY]' derivation='None' name='[none:WMO_AGENCY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Year (bin)]' derivation='None' name='[none:Year (bin):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0576234548781070]' derivation='Sum' name='[sum:Calculation_0576234548781070:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0576234541436933]' derivation='User' name='[usr:Calculation_0576234541436933:qk:6]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Field'>
+                <order field='[federated.0zcnr480r259t818jinqr0b9q93b].[SID]' />
+                <order field='[federated.0zcnr480r259t818jinqr0b9q93b].[Calculation_0576234546122761]' />
+                <sort direction='DESC' using='[federated.0zcnr480r259t818jinqr0b9q93b].[max:Calculation_0576234546122761:qk]' />
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Calculation_0576234549510159]' derivation='User' name='[usr:Calculation_0576234549510159:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:WMO_AGENCY:nk]'>
+            <groupfilter function='member' level='[none:WMO_AGENCY:nk]' member='&quot;hurdat_atl&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0zcnr480r259t818jinqr0b9q93b].[none:WMO_AGENCY:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0zcnr480r259t818jinqr0b9q93b].[usr:Calculation_0576234541436933:qk:6]' scope='rows' value='false' />
+            <format attr='title' class='0' field='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Year (bin):qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='in-tooltip' field='[federated.0zcnr480r259t818jinqr0b9q93b].[none:SID:nk]' value='false' />
+            <format attr='in-tooltip' field='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Year (bin):qk]' value='false' />
+            <format attr='in-tooltip' field='[federated.0zcnr480r259t818jinqr0b9q93b].[usr:Calculation_0576234541436933:qk:6]' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]' />
+              <lod column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:SID:nk]' />
+              <tooltip column='[federated.0zcnr480r259t818jinqr0b9q93b].[attr:NAME:nk]' />
+              <tooltip column='[federated.0zcnr480r259t818jinqr0b9q93b].[usr:Calculation_0576234549510159:nk]' />
+              <tooltip column='[federated.0zcnr480r259t818jinqr0b9q93b].[attr:Calculation_0576234548428812:ok]' />
+              <tooltip column='[federated.0zcnr480r259t818jinqr0b9q93b].[attr:Start Date per SID (copy)_0576234548686861:ok]' />
+              <tooltip column='[federated.0zcnr480r259t818jinqr0b9q93b].[sum:Calculation_0576234548781070:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontsize='11'><![CDATA[<[federated.0zcnr480r259t818jinqr0b9q93b].[attr:NAME:nk]> (]]></run>
+                <run bold='true' fontsize='11'><![CDATA[<[federated.0zcnr480r259t818jinqr0b9q93b].[usr:Calculation_0576234549510159:nk]>]]></run>
+                <run bold='true' fontsize='11'>)</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Peak Intensity:&#9;</run>
+                <run bold='true'><![CDATA[Cat <[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Duration:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0zcnr480r259t818jinqr0b9q93b].[sum:Calculation_0576234548781070:qk]> Days (<[federated.0zcnr480r259t818jinqr0b9q93b].[attr:Calculation_0576234548428812:ok]> - <[federated.0zcnr480r259t818jinqr0b9q93b].[attr:Start Date per SID (copy)_0576234548686861:ok]>)]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.60370165109634399' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0zcnr480r259t818jinqr0b9q93b].[usr:Calculation_0576234541436933:qk:6]</rows>
+        <cols>[federated.0zcnr480r259t818jinqr0b9q93b].[none:Year (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.0zcnr480r259t818jinqr0b9q93b].[Year (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{A45B998F-8AC4-4FB5-B26D-A5BC391799A7}' />
+    </worksheet>
+    <worksheet name='Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ibtracs_lite (ibtracs_lite)' name='federated.0zcnr480r259t818jinqr0b9q93b' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='pYear Bin' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='5.'>
+              <calculation class='tableau' formula='5.' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0zcnr480r259t818jinqr0b9q93b'>
+            <column aggregation='Sum' caption='Year' datatype='integer' name='[Calculation_0576234539573248]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATEPART(&apos;year&apos;, [ISO_TIME])' />
+            </column>
+            <column aggregation='Sum' caption='Peak Intensity per SID' datatype='integer' name='[Calculation_0576234546122761]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{ FIXED [SID]: MAX([USA_SSHS]) }' />
+            </column>
+            <column caption='United States' datatype='string' name='[Calculation_0576234549755920]' role='dimension' semantic-role='[Country].[Name]' type='nominal'>
+              <calculation class='tableau' formula='&apos;United States&apos;' />
+            </column>
+            <column caption='Iso Time' datatype='datetime' datatype-customized='true' name='[ISO_TIME]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' datatype='real' name='[LAT]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' datatype='real' name='[LON]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column datatype='string' name='[SID]' role='dimension' type='nominal' />
+            <column aggregation='Max' caption='Usa Sshs' datatype='integer' name='[USA_SSHS]' role='measure' type='quantitative' />
+            <column aggregation='None' caption='Year (bin)' datatype='integer' name='[Year (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='0' formula='[Calculation_0576234539573248]' peg='0' size-parameter='[Parameters].[Parameter 1]' />
+            </column>
+            <column-instance column='[LAT]' derivation='Avg' name='[avg:LAT:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[LON]' derivation='Avg' name='[avg:LON:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_0576234546122761]' derivation='None' name='[none:Calculation_0576234546122761:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_0576234549755920]' derivation='None' name='[none:Calculation_0576234549755920:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ISO_TIME]' derivation='None' name='[none:ISO_TIME:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[SID]' derivation='None' name='[none:SID:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0zcnr480r259t818jinqr0b9q93b].[Set 1]' />
+          <slices>
+            <column>[federated.0zcnr480r259t818jinqr0b9q93b].[Set 1]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tunnel-service-link-track-case' value='true' />
+            <format attr='enabled' id='tunnel-street_limited-case' value='true' />
+            <format attr='enabled' id='tunnel-street-case' value='true' />
+            <format attr='enabled' id='tunnel-secondary-tertiary-case' value='true' />
+            <format attr='enabled' id='tunnel-primary-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link' value='true' />
+            <format attr='enabled' id='tunnel-service-link-track' value='true' />
+            <format attr='enabled' id='tunnel-street_limited' value='true' />
+            <format attr='enabled' id='tunnel-street' value='true' />
+            <format attr='enabled' id='tunnel-tertiary' value='true' />
+            <format attr='enabled' id='tunnel-secondary' value='true' />
+            <format attr='enabled' id='tunnel-primary' value='true' />
+            <format attr='enabled' id='tunnel-trunk' value='true' />
+            <format attr='enabled' id='tunnel-motorway' value='true' />
+            <format attr='enabled' id='road-street-low' value='true' />
+            <format attr='enabled' id='road-street_limited-low' value='true' />
+            <format attr='enabled' id='road-pedestrian-case' value='true' />
+            <format attr='enabled' id='road-service-link-track-case' value='true' />
+            <format attr='enabled' id='road-street_limited-case' value='true' />
+            <format attr='enabled' id='road-street-case' value='true' />
+            <format attr='enabled' id='road-tertiary-case' value='true' />
+            <format attr='enabled' id='road-secondary-case' value='true' />
+            <format attr='enabled' id='road-primary-case' value='true' />
+            <format attr='enabled' id='road-motorway_link-case' value='true' />
+            <format attr='enabled' id='road-trunk_link-case' value='true' />
+            <format attr='enabled' id='road-trunk-case' value='true' />
+            <format attr='enabled' id='road-motorway-case' value='true' />
+            <format attr='enabled' id='road-trunk_link' value='true' />
+            <format attr='enabled' id='road-motorway_link' value='true' />
+            <format attr='enabled' id='road-path' value='true' />
+            <format attr='enabled' id='road-pedestrian' value='true' />
+            <format attr='enabled' id='road-polygon' value='true' />
+            <format attr='enabled' id='road-service-link-track' value='true' />
+            <format attr='enabled' id='road-street_limited' value='true' />
+            <format attr='enabled' id='road-street' value='true' />
+            <format attr='enabled' id='road-tertiary' value='true' />
+            <format attr='enabled' id='road-secondary' value='true' />
+            <format attr='enabled' id='road-primary' value='true' />
+            <format attr='enabled' id='road-trunk' value='true' />
+            <format attr='enabled' id='road-motorway' value='true' />
+            <format attr='enabled' id='road-rail' value='true' />
+            <format attr='enabled' id='road-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-street-low' value='true' />
+            <format attr='enabled' id='bridge-street_limited-low' value='true' />
+            <format attr='enabled' id='bridge-pedestrian-case' value='true' />
+            <format attr='enabled' id='bridge-service-link-track-case' value='true' />
+            <format attr='enabled' id='bridge-street_limited-case' value='true' />
+            <format attr='enabled' id='bridge-street-case' value='true' />
+            <format attr='enabled' id='bridge-tertiary-case' value='true' />
+            <format attr='enabled' id='bridge-secondary-case' value='true' />
+            <format attr='enabled' id='bridge-primary-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link' value='true' />
+            <format attr='enabled' id='bridge-motorway_link' value='true' />
+            <format attr='enabled' id='bridge-path' value='true' />
+            <format attr='enabled' id='bridge-pedestrian' value='true' />
+            <format attr='enabled' id='bridge-service-link-track' value='true' />
+            <format attr='enabled' id='bridge-street_limited' value='true' />
+            <format attr='enabled' id='bridge-street' value='true' />
+            <format attr='enabled' id='bridge-tertiary' value='true' />
+            <format attr='enabled' id='bridge-secondary' value='true' />
+            <format attr='enabled' id='bridge-primary' value='true' />
+            <format attr='enabled' id='bridge-trunk' value='true' />
+            <format attr='enabled' id='bridge-motorway' value='true' />
+            <format attr='enabled' id='bridge-rail' value='true' />
+            <format attr='enabled' id='bridge-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2' value='true' />
+            <format attr='enabled' id='bridge-trunk-2' value='true' />
+            <format attr='enabled' id='bridge-motorway-2' value='true' />
+            <format attr='enabled' id='road-shields-2-white' value='true' />
+            <format attr='enabled' id='road-shields-2-black' value='true' />
+            <format attr='enabled' id='road-shields-1-white' value='true' />
+            <format attr='enabled' id='road-shields-1-black' value='true' />
+            <format attr='enabled' id='road-label-small' value='true' />
+            <format attr='enabled' id='road-label-big' value='true' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+          </style-rule>
+        </style>
+        <panes customization-axis='layer'>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane generated-title='LAT' id='0' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]' />
+              <size column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:ISO_TIME:ok]' />
+              <lod column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:SID:nk]' />
+              <path column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:ISO_TIME:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.47176796197891235' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane generated-title='United States' hidden='true' id='2' inert='true' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <encodings>
+              <color column='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234549755920:nk]' />
+              <geometry column='[federated.0zcnr480r259t818jinqr0b9q93b].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0zcnr480r259t818jinqr0b9q93b].[avg:LAT:qk]</rows>
+        <cols>[federated.0zcnr480r259t818jinqr0b9q93b].[avg:LON:qk]</cols>
+        <tooltip-style tooltip-mode='none' />
+      </table>
+      <simple-id uuid='{31A44FBC-E15E-4C81-BA8E-4A20C3606D98}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='FeizaData'>
+      <style />
+      <size maxheight='850' maxwidth='1400' minheight='850' minwidth='1400' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='pYear Bin' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='5.'>
+          <calculation class='tableau' formula='5.' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='1' param='vert' type-v2='layout-flow' w='100000' x='0' y='0'>
+          <zone fixed-size='142' forceUpdate='true' h='17647' id='2' is-fixed='true' type-v2='text' w='97142' x='1429' y='2353'>
+            <formatted-text>
+              <run bold='true' fontcolor='#333333' fontname='Tableau Medium' fontsize='24'>Historical Tropical Cyclones in the Atlantic</run>
+              <run>Æ&#10;</run>
+              <run fontname='Tableau Medium' fontsize='15'>Select a storm to view the path on the map.</run>
+              <run>Æ&#10;</run>
+              <run fontname='Tableau Medium' fontsize='11' italic='true'>Peak Intensity based on HURDAT database</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='73530' id='5' name='Beeswarm Atlantic' show-title='false' w='97142' x='1429' y='20000'>
+            <layout-cache minheight='130' type-h='scalable' type-w='fixed' />
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='27' forceUpdate='true' h='4117' id='3' is-fixed='true' type-v2='text' w='97142' x='1429' y='93530'>
+            <formatted-text>
+              <run fontalignment='1' fontcolor='#333333' fontname='Tableau Medium' fontsize='10'>Viz by Blake Feiza  •  Data: IBTrACS  •  #MakeoverMonday</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='20' />
+          </zone-style>
+        </zone>
+        <zone h='17294' id='8' name='Map' show-title='false' w='16143' x='82000' y='2471' />
+        <zone custom-title='true' h='5176' id='7' mode='type_in' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='11429' x='1929' y='20471'>
+          <formatted-text>
+            <run> Adjust Bin Size (Years)</run>
+          </formatted-text>
+        </zone>
+      </zones>
+      <simple-id uuid='{D064B7B0-F268-4CDA-82C1-DF5AB3CE126F}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='FeizaData'>
+      <viewpoints>
+        <viewpoint name='Beeswarm Atlantic'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Map'>
+          <zoom type='entire-view' />
+          <floating-toolbar-visibility value='2' />
+          <geo-search-visibility value='1' />
+          <map-navigation value='1' />
+          <layer-control toolbar-button-enabled='false' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{25183BC3-63E9-4EAB-A11A-A20F47F52961}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Beeswarm Atlantic'>
+      <cards>
+        <edge name='left'>
+          <strip size='224'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='type_in' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='1' param='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:BASIN:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234539573248:ok]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:NAME:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:NATURE:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:SID:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:SUBBASIN:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:WMO_AGENCY:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:Year (bin):qk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[usr:Calculation_0576234548350987:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[usr:Calculation_0576234549510159:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[yr:Calculation_0576234548428812:ok]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[yr:Start Date per SID (copy)_0576234548686861:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{708A2C89-4B84-4649-8B37-FF7B28768133}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0zcnr480r259t818jinqr0b9q93b].[none:ISO_TIME:ok]' type='size' />
+            <card pane-specification-id='0' param='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]' type='color' />
+            <card pane-specification-id='2' param='[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234549755920:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[Set 1]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234546122761:ok]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:Calculation_0576234549755920:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:ISO_TIME:ok]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[none:SID:nk]</field>
+            <field>[federated.0zcnr480r259t818jinqr0b9q93b].[yr:ISO_TIME:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1D562426-B664-4B61-B286-D0D97A63A1C6}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='FeizaData' width='384'>
+      iVBORw0KGgoAAAANSUhEUgAAAYAAAAGACAYAAACkx7W/AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nOydeXxU1fn/37MlmewJSUgIJCTsW1gCQUFkEajggtaqVasttdra/rpYq9al
+      FHerVVtcigtttSqoFasVEJTFQFiMECBhS8geCCF7JplkMsv9/THN/RKSQJhckoF53q8Xrwkz
+      d84859x7z+fe53POuTpFURQEQRAEn0Pf1wEIgiAIfYMIgCAIgo8iAiAIguCjiAAIgiD4KCIA
+      giAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIA
+      giAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIA
+      giAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KEZP
+      v6goCoqiAKDXt9cRl8sFgE6nQ6fTUV9fz0cffQTAzJkzGTZsmKc/qwnnK54VK1Zw7Ngx5syZ
+      w2WXXdbus1Pbqyva2qs3eP/997FarQwfPpzLL79ckzKPHj3K+++/j8Fg4JFHHjnr9vX19ZSX
+      lxMYGMiAAQMwGj0+HNvhcDh4+umnAVi8eDGDBg3SpNzzxeHDh9m2bRsA3//+9wkODtb8Nz7+
+      +GMOHDhAWloaV155pebl22w2Wlpa1P+HhIR06Be64lyPG63wtn6pL/D4jHvnnXd4+eWXiYyM
+      ZMOGDe0+mzlzJs3NzTz44IPceOON1NbWsnz5cgAGDBjQ7YZ++eWXsVgsLFq0iDFjxngaagc8
+      jedsbNu2jezsbOLj4zsIwJdffsnDDz98xu9v374dPz8/TWI5G2+//TbV1dUsWrRIMwGorKzk
+      s88+O+uJXFxczAsvvMDOnTvVi4WwsDCeeOIJpk2b1uM4XC4Xn332GQDXXnut1wvAgQMH1OPx
+      mmuu8VgAampq1HJ++ctfEhISon62e/duNmzYgMlkOi8C8PLLL7Nq1Sr1/6+//jqpqakdtuns
+      fO7uceMpn376KQcOHGDixIksWLBAff989QMXEtpccnVB2xVvYGAg8+bNAyA+Pr7b31+7di2V
+      lZVMmjRJUwHwNJ6ecLar/95m5syZWCwWxo0b16u/W1hYyJ133klDQwPgvnt0uVzU19dz4sSJ
+      Xo3FWxg4cKB6PAYGBnpcTmNjI6tXrwbgrrvuaicA55uMjAwAjEYjDoeDjIyMDgJwvs7ns5GZ
+      mckXX3yBoijtBKAv+gFv47wKQBtRUVH88Ic/BCAxMVF932KxkJ2dTW1tLeHh4YwZM4bw8HBa
+      WlooKirCbrcDcPz4cQ4fPozBYGin0gUFBWRmZuJwOBg6dChpaWlqCsXhcHD06FEAhg4dit1u
+      59ChQwwaNKjLeAAOHjzI3r17URSF4cOHM2nSJAwGAwAnTpwgNzeXqqoqQkNDmTBhAlFRUd1q
+      gxkzZvDvf/8bgK1bt/LXv/4VgFWrVqmpD5PJRENDA8ePH8fPz4/k5GSqq6s5evQoEydOxM/P
+      D0VR+Pbbb8nLy0Ov1zN58mSGDh2q/s6p3x80aBA7d+6krq6OCRMmtLsSvu2222hubiYmJqZd
+      nI2NjWzbto2KigoiIiKYNm2aWke73c6BAwcoLy+npaWFpKQkUlJSun2rD/DUU0/R0NCAv78/
+      jz76KPPmzcNms7Fr1y7CwsKoqKigtrYWo9HYrl5VVVVUVVXh7+9PUlISAE6nk507d5Kfn4/Z
+      bGbixIntvnM659J2SUlJ5OTkUFhYyKBBg5g4cWK7spqamkhPT+fkyZPExMRw+eWXExQU1G6b
+      8vJyDh8+TEtLC9HR0YwbNw5/f/8OcY0dO5awsDD0er3aaZ84cYK6ujrCw8OJjIwkMzOT2tpa
+      xo4dy+DBgzuUUVNTQ35+vvr/o0ePUl1dTUhISIfOrbW1lW+++Ya6ujrGjRvX4Rw4dOgQWVlZ
+      AEycOJFRo0Z12abgvqMrLS1Fr9fzk5/8hOXLl7N9+3Z+9atfAXT7fD4di8XCgQMHqKiowGAw
+      MGbMGHXfd6eNFEUhLy+P+vp6AOrq6jh8+DAASUlJZ+wHysvL2bFjB42NjcTHxzNt2jTMZvMZ
+      2+FCpFcEwOFw8IMf/ACAt956iwkTJrB161b+8Ic/0NjYqG6n1+t55plnCAsL42c/+5n6/muv
+      vcZrr71GaGgomzZtAty3k++88067K+vU1FReeOEFgoODKSsrU3/zww8/5He/+x0lJSUsXbqU
+      +fPnd4jHbrezdOlS1q9f3y72ZcuWMW3aNP785z+3u8UFCAgIYOnSpcydO/esbRAYGKieuG0H
+      IbgPPJPJpP7/yy+/5JlnnmHw4MEsWbKEX/ziFzQ3N/Pf//6XsLAw7r//fnbt2tWu7FtvvZV7
+      770XnU6nfj88PJywsDCKi4sBMBgMPPbYY+rt/9KlS8nOzuaee+7hzjvvBODbb7/l97//PXV1
+      dWrZY8eO5Z///CdlZWX88Ic/VE+mNiZNmsSyZcsICAg4axvk5+ezd+9eAH7+85+rV2NGo5E5
+      c+YA8J///Icnn3wSnU7HmjVrVIF67rnn2LRpE1deeSVPPvkkFRUV3HvvveTm5rb7jYyMjE59
+      FKvVek5tN2jQILKzs9Xt7rrrLn76058CkJuby69+9SuqqqrUz2NjY3n99dfVzvaNN95gxYoV
+      OJ1OdRuz2czHH3/cQXT379/PL3/5SwwGgxrfsmXL2LBhA8OHD6e+vp6KigrAvR+XLVvG1KlT
+      25Xx0Ucf8eabb6r//+UvfwnA7Nmzef7559v91nXXXcfJkyfV8l599VUmT56Moig899xzal68
+      jTvvvJN77rmnQ5u20eZfjBkzhjlz5rB8+XKOHj1KRUUF/fv3Jycn56zn8+ls2LCBP/7xj6po
+      tPGDH/yA3/zmN91qo7S0NG699Vb1u5s3b2bz5s0ArFy5ksTExA79AMB7773Hyy+/jMPhUL/7
+      wx/+UG3Ti4kejwKy2WysW7eu3b9TD/queO6552hsbGT8+PH8+Mc/5uqrryY4OJimpiZCQkJI
+      S0tTO8bk5GTS0tKYPHkyAJs2beLtt99GURTGjx/P3Llz0ev17N69W72yPpXnn3+ekpKSM8bz
+      5ptvqp3/rFmzuO222xg5cqT6+YkTJ4iJieHaa6/l1ltvJSYmhpaWFl588cXzkt6x2Wz84Q9/
+      oLm5WX3v1VdfZdeuXeh0OubMmcOkSZMAt6F7unDV1dXR2trKjBkzCAwMxOl08qc//amdUXcq
+      tbW13H///dTV1REdHc1tt93GggUL1JSE1WrFYrEwZcoUfvCDHzB79mwA9uzZw7p167pVp/37
+      9wNus/uaa67pdJv58+djNptRFEX1lmw2Gzt27ABgwYIFKIrCww8/TG5uLn5+fnz3u9/le9/7
+      Hv379+/yt8+17Y4cOcLo0aPVK/K1a9cCbn/h4YcfpqqqigkTJnD//fczbNgwTpw4wQsvvADA
+      sWPHeOONN3A6ncyfP5/Fixdz+eWXY7fbO3RoZyM3Nxer1crYsWMxGAw4nc4O8YI7hZGSkqL+
+      f8KECaSlpTF8+PB22+Xl5dHS0tJpeRs2bOCjjz7CZDJx1113cccdd6DT6VixYgWHDh3qMsa2
+      9M/UqVNJSkoiOjoacHtawFnP586orq7GZDJxxRVXcPvtt6spo3fffbfDuXymNkpLS6Nfv34A
+      REdHk5aWRlpaWoe7tTZ27tzJSy+9hMPhYNSoUdxxxx1MmzZNzQJcbPT4DqCpqYk//OEP5/Qd
+      RVHUq6err76a6667Dp1Oh81mo7m5mfDwcF577TUWLFhAZWUlP/7xj9sZV5988gkAl1xyCcuW
+      LUOv1/Puu+/yl7/8hTVr1vC73/2u3e9lZmYyfvx4br755k4POofDwYcffgi4rwh/+9vfqp+1
+      mZS/+tWviI+PVw+EmTNn8tOf/pSTJ0/S1NSk+ciN8vJywN0+V1xxBeHh4aqxec899/DjH/8Y
+      RVG47777SE9P55NPPmnXRgMHDmT16tXo9Xr27dvHnXfeicViYd++fR2uHgE+//xzLBYLgYGB
+      vP322+pValv94+PjWbNmjXpyA/z0pz9l9+7dFBYWdqtOtbW1AISGhhIaGtrpNoGBgcyfP59P
+      P/2U9evX84Mf/IBvvvmG5uZmIiIimDp1KocOHWLfvn0APPPMM8ycOROABx54AL1eT2tra7sy
+      HQ7HObVdXFwcq1atIigoiLVr17JkyRIsFgsA2dnZFBUV4efnx4svvkhoaCgTJ07k1ltvJSMj
+      A6vVqh7bRqORO++8kyFDhgDuNM255uXnzZvHk08+icFg4IknnuDTTz9VYzmVq6++mpSUFL77
+      3e+q7XLqvmpj/vz5PPHEExgMBv74xz+yZs0a9S68rY1uvfVW9W6npKSELVu28NVXX3WaCmpq
+      amLPnj2A+3zU6XRMmTKFtWvXkpGRwfXXX8+IESPOeD53xpw5c1i0aJF6AdLS0sLcuXNpaWmh
+      sLCQhISEs7aRTqfjtdde49FHH+WLL77gsssua2cyn36cAOpd/pgxY3jrrbdU0Wo7Dy42eiwA
+      BoOhQ07y1FxkZ+h0OiZMmEBmZiZPPfUUy5cvJzU1lWuvvZZLLrnkrL/Zltu/4oor1Pzz3Llz
+      +ctf/kJrayulpaXthhTOmTOHp59+Wn3v9B1fXl6ungTXX399u8/ayvfz8+PPf/4ze/fupba2
+      FpvNpm5z6q2iltx7773cdtttgPtEbLsbaEs56XQ6rrjiCtLT09U2acNoNKqxjx8/nvDwcOrq
+      6tTb5NNpS6VMnz69XYqirYzAwEC2bNnCunXrKCkpoaWlRTVyu1v/tjRRS0sLLperS+9g0aJF
+      fPrppxw6dIji4mK2bNkCuDsvo9GoxhoZGdluBFNX5R0/fvyc2s7f31+9Qjw971tQUKDW5b33
+      3gP+r3NwOp2UlpaSnJxMaGgoDQ0N3HzzzSQmJjJ16lRuvPFGIiMju9FS/0doaKh60aFFDjok
+      JKTL8trqVlxczN/+9jcANR1YVFTUaXm7du3C4XBgMpnw9/cnLy9PTYN988032O32dinO7hIW
+      FsZ7772n+lF2u129ez39eNOyjdqOrWuuuaZd3Ofic11I9FgAwsLC+OCDD9q9N2PGjHapi854
+      4oknWL58OZs3b6a6upoNGzawYcMGHnjgAW666aYzfrftADjVUDv1b6fT2U4A7r///jOOMT/1
+      gOpsGGZzczN33nknFRUVxMfHc+mll+JwOLqd+vCEhIQEtfM/PcbO6t2dtBvQ5TyDtvK7Gob6
+      4Ycf8vzzz2M0Grnkkkvo378/mZmZZ02tnUrbVZvNZiMnJ6ddyuJUxo0bR1JSEoWFhaxbt470
+      9HQA9arx1Fi7M29Cq7Y7tayGhgZWrFjR4fPm5mZCQkJ45ZVXeOONN/jmm28oLi6muLiY//zn
+      P6xYseKspmpf0Va3LVu2qKLbRlfnc1v6x263c/vtt7f7zGq1snfvXqZMmXLOsSxZsoRNmzYR
+      EhLCpZdeSlhYGJ9//vlZ+5Wecrbz4GKjT2TN5XIRFBTEo48+ypdffsm//vUvddz8V199pW7X
+      dnJbrdZ234+LiwMgJydHfe/Uv0/PBZ9NvePi4tQd3pZrPpXdu3dTUVFBdHQ0H374IX/84x+5
+      ++67z1rPnnB6zP3791ff66zesbGxXZZVUFCgXsl1tV3bKIhvv/2201vjNWvWAPCb3/yGv/zl
+      Lzz00EPnPJQvNTVVTYH89a9/bXcX5XQ6VYNZp9Nx3XXXAe6cb21tLYMGDWLs2LHtYq2oqDjr
+      3Sb0rO1Op+3uyN/fn3Xr1rF169Z2/8aNG0dzczMjR47kL3/5C5s3b2bZsmUkJCTQ2tqqitn5
+      4FQxPP2c6Q5tdbv99ts71Oull17qsL2iKKoAREREEBcXp/5rE9e2z0+N72yxWa1W1Rx+4403
+      ePrpp3nwwQc9Htba3d+F/zu2OusHLkZ6ZRTQ6VitVm644Qauu+460tLSCA4OJjw8HGh/EEdE
+      RHDy5EnefvttHA4HBoOBG264gVmzZnHw4EE++eQT4uLi6N+/P8uWLQPcw9ba0h3dJSAggHnz
+      5rFmzRpeeuklGhsbiY2NZe/evcyePVs1eRsbG/n2229xuVwdRkqcb4KCgpgyZQq7du3iz3/+
+      M3a7nZqaGtW7mDVrVrvta2pqWLVqFXq9Xk1VREREdHnVvXDhQv7xj39QUVHB//t//48bbriB
+      mpoajh49yh/+8Ae1DQ4ePEhOTg6ZmZmqydddzGYzd911Fy+++CL79u3jlltuYc6cOTgcDr7+
+      +mtuueUW9e5v4cKFvPzyy+pt/5VXXqkeGxMnTmTgwIGUlZXx61//mrvuugudTsfWrVtZsmRJ
+      h6GW59p2Z2LSpEmYzWaam5u57777uP3224mIiCA/P58NGzbw3HPPkZOTw/Lly1m0aBHjxo0j
+      JCREzWWfz5nebecQwLPPPsvcuXOJjo7u9kS/yy67jCNHjrBq1Sr8/PyYNGkSzc3N7Nq1i5CQ
+      EH7+85+32/7w4cOq3/Hmm2+2SwW/8MILrFy5ku3bt6ujdro6n0/n1EEVmZmZWCwWvvzyS6qr
+      q7vdFqcSEREBuO9s/vGPfxAQEMDChQs7TRddc801ZGVl8eWXXxIcHExaWhqFhYUEBgaqI4Yu
+      JvpEAHQ6HdXV1axYsaLDbfSNN96o/n3VVVdx5MgRjh07xnPPPUdkZCQ33HADt956K5s3b+bQ
+      oUPtRv2EhITwwAMPeBTTb3/7W44cOcLRo0d55ZVX1PcnT57MlClT1Jzur3/9a4BzzuVqwe9+
+      9zt+8pOfUFlZyaOPPqq+P2zYMO6444522zY0NPDnP/9Z/b/BYOD3v/99p+PQwZ2eeeCBB3j2
+      2WfZs2ePauwlJycD7rTeoUOHWLt2LWvXrkWv13dp5J6JW265herqat555x1KSkr45z//2el2
+      ERERzJw5k40bNwK0m8BjNBp58skn+eUvf8mJEyd44okn1M8efvjhTut4Lm13JtqOsSeeeIKD
+      Bw/y0EMPtfvc6XSi0+nIy8tr1/4AwcHB7eqhNSEhIcycOZOvv/6azMxMMjMzmTdvXrcF4I47
+      7mDr1q3k5uZ2ODfb7shOpe3qvn///h3G0aelpbFy5UoKCgooLy8nLi6uy/P5dIKCgkhNTWX3
+      7t28+OKLgLvt9Hr9OaXr2rjyyiv54IMPsNlsvPrqq4DbsO5s8tc111xDZmYm69at45NPPlEH
+      nJzaL11MGJYuXbrUky/qdDpiY2OZPHlyh6tKnU7HxIkTSU1NVW8r9Xo9qamppKamEhkZydy5
+      c4mKiiImJobY2FjS0tK4//77ufTSS9Vyxo4dy7BhwzCbzcTGxjJ16lSmTp2K0WhkwYIFBAcH
+      o9PpiImJYebMmSxdurTdVUhAQID6m6cbUafGExwcTEBAAFdffTXR0dEEBwczZMgQ5s+fz5w5
+      c4iIiOCSSy7BarUSHR3N9ddfz4MPPqgeqKmpqRiNRnQ6HSNHjiQ1NVVNU3VFZGQkqampTJ48
+      ucNVYXR0NKmpqR1SLBEREXznO99BURRMJhMJCQksWrSIRx55RL3CPHToENu2bSM2NpYf/ehH
+      9OvXjylTpnD//feTlpbWbh+dHuvo0aO5/PLL8ff3JyYmhokTJ3LzzTeTkJBASkoKZrMZg8HA
+      +PHjefjhh0lNTSUpKYnU1FQSEhLQ6XSEhoaqbdLVcTN16lRmzZpFSEgIUVFRjBkzhuuvv54r
+      r7yyXeddV1dHRkYGY8aM4Uc/+lG7cmJiYrjqqqsICgoiPDyc0aNHc+ONN6oT007fv91pu87a
+      XqfTER4ezuTJkxk/fjwAI0aMUIfXRkdHq+Pf77vvPhISEkhISFCP8+joaBISEpg1axZLlizp
+      tNPpqt2Sk5NJTU1t17kOGjSIKVOmqMJ8OrNnzyYsLIyQkBASEhKYMWOGOhS0s/ISEhKYPHky
+      ycnJ+Pn5cdVVVxEbG0toaCgJCQlMnTqV73//+3z/+9/vcA5VVlYydOhQvvOd73SYgBcdHY3J
+      ZFJ/LyIiosvzubP6T58+ndbWVoKDg5k5cyaPP/44UVFRpKSkMHnyZPWqvjttFB0dzYwZMzAY
+      DERHRzN+/HhmzpyJ2WzucJzodDpmz57NiBEjMJvNDBw4kOnTp3Pdddf1yUXf+UaneNsaBUKP
+      +Pjjj9WJZG0zjy80ysvLqaysZMmSJZSVlbFkyRKuvfbavg5LEC46+iQFJAhn4re//S15eXmA
+      e0TQ+UybCIIvIwJwkREbG8uMGTPOOCvW20lJSSEmJoaxY8dyyy23eDSOXBCEsyMpIEEQBB/l
+      4pzeJgiCIJwVEQBBEAQfpVcEwG63t1v2Weg7HA5Hn+yLpqamc14J0xNOfzShIAhd47EA5OXl
+      8fLLL/Pkk0+yYsUKdfXKzmibGXmuZGVlabb2x8mTJzss+qU1zc3N6oM0esKqVav4z3/+o0FE
+      HetdUlLCc889p0nZZ+Lo0aPqmvPgfl6yFm1zOqfXb/PmzRfs8FdB6G08EgCbzcYrr7xCSkoK
+      N910E/Hx8e0EQFGUMy6fqihKt2b0vfvuu+qKkz3l4MGDHRa4gnNbCOxs1NbWsnLlyg7vn609
+      TmfWrFntno3b3fbqjK7q3RVatcfGjRs5cuTIOX/vXH+/r+onCBcDHo0Cqq6u5tFHH+Wxxx7r
+      8HSjbdu28fHHH+NyuViwYAFXXnklWVlZbNy4kd/97ncUFhby5ptv0tjYyJgxY7jzzjsxGo3s
+      27ePjz76iLq6OubPn09xcTE5OTlERkZiMpl4/PHH1d/YsmUL69evp7GxkaSkJH72s5+pszld
+      Lhfvvvsu+/btw2AwsGDBAqKjo/n73/+Ow+EgLCyMK664gsmTJ/PWW29x6NAhYmJi+NGPfsSQ
+      IUN45513GDVqFJmZmfTr148BAwbw7bffUlNTQ11dHdOnTyc3N5eTJ09y1VVXqWPUm5qaeOKJ
+      J6ivrycqKork5GQWL17Mzp07WbVqFU6nk7S0NG677TZ1YbIdO3Zw9OhRdRXF5cuXM336dEpK
+      SggICOCKK67otL0+++wztR4bNmxg9+7d/P73v6ehoYG//vWvPPLIIxgMBnJycjrUOyEhgVdf
+      fZXBgwdz+PBhkpKSuPfee2lqauKNN96gpKSEqKgofvGLX6gP0gB45513qK+vJz8/n6CgIH78
+      4x8zZMiQTvfFpk2bWL9+Pf7+/pjNZjVm+L+lmX/0ox+1e8xiSUkJb775JlVVVQwdOpSf/OQn
+      hIWF8fjjjxMfH092djZms5nf/OY36hDXzurX0tLC7t27URSF8vJy5syZww033EBDQ8NZ69fQ
+      0EBhYSEGg4G0tDQyMzNpbW3l7rvvZtSoUbz99tvs379f3Ze33HIL27Zt49tvv6WyspKWlhYW
+      LVqkPp9AELwdj5aCMJvNVFZWsnLlSkpKSggODiY6Opq6ujpee+01HnnkEebOncvf//53UlNT
+      1RNr2rRpLFu2jGuvvZbFixezZcsWTCYTYWFhvPDCC9xxxx3cdttt6hKwGRkZ/OxnP2PevHnt
+      lghwOBzMmzePq6++moyMDAwGgzoVvLy8nH//+98888wzXHbZZRgMBoYMGYJer8doNPKzn/2M
+      wYMH8/nnn9Pa2sqjjz6KyWTi448/Zvbs2aSnp7Nz504SExOZMWMGx44do7Kykrvvvhs/Pz8O
+      HDjAXXfdRVxcHDt27FBPdqPRSGJiIjk5OTz00EOkpKRgtVpZtmwZv/rVr1i0aBFr1qxRp5eD
+      e0XJlStXMnfuXJqamli5ciU333wzOTk5KIrCiBEjOm2vwMBAdu/ezaWXXsrq1atpbGxk9OjR
+      FBQUUFlZqS6nERER0aHeFouFzMxMbr75ZhYuXMinn35KamoqGzZsIDg4mAceeIDa2lqys7PV
+      R+QBfP311wwaNIh77rmHpqYmtm7dymWXXdbpvrjssssoLS0lLS2Nm2++maioKDIzM9VnsLpc
+      LgoKCtote9D26M1f/OIX5ObmkpeXx/jx4/nwww+ZNWsWN910E4cPH8bPz09d7qOz+hUVFVFV
+      VcUdd9zByJEjWbduHfPnz2f16tVnrV9sbCyLFy9WVxj9yU9+Qm1trfqcWaPRyPe+9z2mT5/O
+      e++9x8SJEyktLaWqqopf//rXDB48mH/961/MmjVL5i4IFwQeTQTT6XQsXryYOXPmsGPHDl59
+      9VVuv/12goKC8PPzU1eJ9Pf359ixY+r3bDYbx48fp6SkhOPHjwPuK7+QkBBiYmIYN24cgPrw
+      cp1OR3BwcIdFx1wuFx988AG1tbVUVVW1W+a1X79+hIWF8eyzzzJu3DjmzJmDyWQiICAAk8mk
+      llVQUMBVV12FyWRixowZrFq1SjVHp0yZoi7+lJOTQ0xMDNHR0fTv319d9tZisbRL6+j1enUt
+      kbbfyMnJIS4uTn0i1OTJkyksLFQfehMTE0P//v05dOgQFouFkSNHtluXpqv2mjdvHitXrlQf
+      0zh16lTy8vIoKipqt35QZ/UG92JbbevDBAQE4HK5KCoqIioqis8++4za2lr1904lPj6egIAA
+      pk+fztdff93lvjCbzRiNRsxmc7vfHTp0qLo+zqkrO7a2tlJWVsYDDzyA0WhkxowZvP/+++rn
+      48aNIywsjPDw8HZt3lX9BgwYQHx8PHq9Xt2+O/VLTEwkPDycfv36ERMTo8badlzU1dXx+uuv
+      Y7VacTgc6nEXHR1NSEgIKSkpBAUFUVVV1e6JVYLgrXgkAHa7Xb3qTkxMxGw2c/DgQaZPn46i
+      KAwePBidTkdSUhIJCQnqIwNNJhMGg4G4uDiCg4NJSkoiMjKS1tZWGhsbO31K1Om5c0VRWL58
+      OYsXL2bMmDEdHtTu7+/PkiVLKCwsZNu2bbz++uv8/ve/V7976nZNTU2A27xVFEV9JsDpKxue
+      C6fGGxAQQFNTE4qioNPpaGpq6rBSZWpqKvv27cNisXRYQK2r9oqIiCAqKoqNG9iLIKMAACAA
+      SURBVDcyZMgQRowYQXp6OgUFBZ0+oL47WT5/f3/Cw8NJSkoiKSmpy1VDwe11BAcHn3Ff6HS6
+      bvseRqMRo9Gotk9n7XQmtK5fZ5SVlfHpp59y//33Ex0dTWc3zjab7bw8HlQQzhcemcClpaU8
+      9thj/Oc//2HdunVkZGQwcuRIBg8ejNFoJDs7m6amJrKzs9X1wsF9lTxhwgR27txJU1MTRUVF
+      5OXlkZiYSGBgIH//+99JT09XlwCOiopi7dq1nZp85eXlfPnllx1GluTn5/Ovf/2L2tpaQkJC
+      VEGJiori8OHDbN68mYKCAqZMmcJnn33Gjh07+Oc//0lKSso5dwqnEx4eTnNzM59//jlZWVkM
+      HjwYRVH44IMP2LJlC9u3b+/QybcJQFvK41S6ai9wr9y5ceNGRowYQVJSEocPH8blcnV4uMnp
+      9e6KSZMmkZWVRX19PZWVlepy0Keyb98+vv76a9599912zxXubF9ERUWRkZFBeno6NTU1Z2w3
+      vV7PpEmTeOedd9i5cyerV68+4wPDz1f9zobD4aCgoIB///vfVFZWqu8XFxezdetWli9fzuDB
+      g4mIiCAzM5M//elP5/wbgtCbeOQBhIaGEhkZqRpfbaaqwWAgNTWViooKTp48SUJCAqNHj8Zo
+      NBIcHMygQYNISUnBZrNRWlpKSEgIkydPJjAwkMmTJ1NdXU1lZSXDhg0jOjqaoUOHcvz4caxW
+      a7vleRMTEzl06BDBwcFMnTqVAQMGqEu1BgUF0djYSH5+PkajkRtuuEFdttfPz4/S0lLi4uKY
+      OHEiwcHBHDx4kP79+3PTTTepj40cOHBgu5RCZGSkajyGhYWpS/oGBga2W37aZDKRmJhIUVER
+      ZrOZpKQkJk6cSGFhISdOnOC73/1uh2Vzg4KCsFqtjB49Wn1UYNsS123L357eXmazmbCwMMxm
+      M1OmTMFsNmM2m0lJSemw3PDp9Y6KilJja2PIkCEMHz6c8PBwioqKcLlcpKWltXvAyK5duzCZ
+      TNhsNiZPnqw+j7mrfZGYmIjFYlH3Z5v3ERoaqi6xPGDAALX8sWPHUl9fz9GjR0lLS2PWrFnq
+      MtnDhg1T901cXJy6FHBX9WvbXzqdDn9/f4YMGaKmd7qq3+n7PTY2Vj2moqKiGDp0KGazmby8
+      PIYNG8awYcNISkpSPSKDwcCAAQO46aabMJlMOJ1O/Pz81PSfIHgjshaQ0C2WLVvGJZdc0u6Z
+      AgJ88cUXVFVVXZRPixIufmQ1UKFbTJ06tdOHmfg6Q4cObXcnIwgXEnIHIAiC4KPIYnCCIAg+
+      Sq8LwIkTJ7o1bE8rHA5Ht6f/Nzc3U1dXp8nv2u32diOgLjRcLhcVFRXn/D0t21AQhPNLjwTg
+      +eef509/+hOPP/44ubm5Z93e5XKxYsWKDg9BdzqdXQ6ZO378ODt37vQ4xi+++IIjR450q5yM
+      jAwOHDjg8W+dSk5Ojjoh7lzYs2cP69evB+DYsWO88847KIrCn/70J3Vc/d/+9jcaGhr497//
+      zdNPP81jjz3GF198AcAbb7zBM888w1NPPcXevXvVcrds2cK9995LbW0tLpeLF154gSVLlvD4
+      44/z/PPP43A42sVRVlbG2rVrO41xzZo12Gy2Tj/Tsg0FQTi/eGwC19fXoygKDz74IDt27ODA
+      gQNER0fz1VdfYTKZuPrqq6msrGTHjh3Y7Xa+853vYLFYGDhwIDabjW3btjFr1iwMBgPFxcVE
+      RkZitVrZvn07zc3NOJ1OLr/8cnVdIYPBwPjx49m0aRPV1dUsXLgQp9NJdna2OuZ/3rx5HD58
+      mL179xIVFcXcuXMJDAwkLi6Od999Vy2nvr6e2bNn43K5yMjIYNasWQDk5uYSHR3NBx98wFVX
+      XYXdbmfr1q00NTUxc+ZMYmJi2LJlC1VVVaSmpjJkyBDS09MpLS1lzpw5xMfHk5OTw8GDBykr
+      K2PhwoVqex08eJDdu3czZMgQpk2bxrZt23C5XJSWljJ37lx1mOmhQ4eYNGkSAEeOHCE+Pp6q
+      qir8/f3R6/U4HA4qKysJDQ3l4MGDPPjgg7S2tvLSSy8xb948jh07xtKlSzlx4gSvvvoqEyZM
+      wGq18u233zJmzBisVisRERHcd999vP766yxYsKDdrNX8/Hz27NlDZWUl48ePp7y8vN0+PHTo
+      EJs2bcLhcDB79myysrI4duwYSUlJXHrppR3aUK/Xs2XLFurq6pg6dSrJyclkZGRQWlrK6NGj
+      GTduXIc2FAShd+jRctADBw7k2LFj7Nq1i9GjR7NixQqmT59OXV0dBQUFtLS0MHXqVAwGA/v3
+      7yc3N5eEhATefPNNkpKSMBgMgLvjHTFihLoGzJgxY9ixYwcBAQFYLBa+853vMGTIEN5//31i
+      Y2NJTEwkIyODffv2cfz4cVJSUkhPT6ehoYGPPvqIWbNmqcs1ZGVldShn//79VFdXs2HDBnXy
+      l8vl4uTJk6SmpuJwONizZw9Wq5Xx48cTExPDN998w+bNm2lsbGTGjBn4+/vz+eefA+5JRl99
+      9RVZWVls376d6dOnU1tbS3JyMuDuyNPT05k7dy7r16+nqamJL7/8kvDwcBwOB0VFRWq75ubm
+      kpGRwTvvvMOWLVsYPnw4ubm56tINRUVFDB48mPr6elwulzpDddq0aZSUlJCQkKDOI2hr37Vr
+      1zJ//nwCAwPV5QsURaGsrExdlwigsLCQzz77jKlTp9LQ0MDw4cM77EOj0ciIESOYOHEiAQEB
+      REREMHv2bNauXdtlGw4fPpyRI0eyefNmsrKyyMvLY/bs2QQHB3doQ0EQeg+PBeDIkSNUVVXx
+      9ddfs3DhQlpbW7FarXz11VfU1tbi5+fH119/rc4QjY+PJzc3l7Vr15KWlqZ2jm1ltXV0s2fP
+      JiYmhpiYGPz9/XG5XIwcORKz2cyBAwfYv3+/ukrokSNHmD9/PiaTieTkZPz9/YmJieGtt97C
+      YDCok3b8/PzUciIjI4mNjSU3N5eCggJ1XZ5jx46RmJhIcnIygYGBhIWFkZ6ezqZNm9i+fTsD
+      BgwgMTGRw4cPs3r1avr378/27dspKSlhx44dREdHs3nzZm699VbCw8MJDw9Xl5bYsmUL3/3u
+      d4mLi8NsNnPy5EkGDx5MSkoKjY2Nals0NDQQEBDAggULmDNnDna7nfj4ePLz8xk2bBjgvkMY
+      NWoUeXl5BAUF8frrr9O/f3/mzp3bTiiysrIYNWoUlZWVpKenk5mZyZEjR9TnKxw/fpzY2Nh2
+      S29s2bKF733vewwcOBC73U5oaGiHfVhTU0NKSgoJCQnk5OSwY8cO/vvf/xIVFdWhDSMiIti+
+      fTtff/01GzduJD4+ntjYWKqrq3n33XeJjIzs0IaCIPQeHgtAfn4+P/3pT7n11lsZPnw4VquV
+      xMRE5s2bx+zZszlx4gSBgYFccsklGAwGEhISqKmp4e6772br1q2qEex0OqmqqqJ///7k5+eT
+      nJxMbm4uw4YNo6qqCpPJRHl5OS0tLYSGhjJ37lzS0tJITU2lurqa6OhoteM7cOAAixYtYty4
+      cRw/flx9/9RywD2b9JNPPuF73/ue6kfk5uYSHh6uLsvg7+9PQ0ODutrn4MGDqa2tZfHixVgs
+      FlpaWtDr9cyePZtLLrmEadOmUVdXx4kTJ9i4caPaYYN7jZiKigo2bdpEUlISBQUFDB8+HJfL
+      pdahLYZRo0YRHx+PTqcjISEBvV5Pc3MzxcXFZGdns3//fsaPH8+RI0e46qqruOOOO9i1axcO
+      h4MjR47gcDhYv349Gzdu5JprruGTTz7hnnvu4frrr2fcuHGqAJwqFm3U1dVRWVnJtm3bGDhw
+      IFlZWe32YWJiImVlZQBYLBb++9//ctVVVxEeHq4K+KltGBsby6FDh5g/fz5Go5Hhw4dTVFTE
+      HXfcgclkoqGhoUMbCoLQe3i0FESbGXnqsgYxMTGcPHmSgoICBg0axMCBA8nLy8PPz4/k5GRi
+      Y2MJCQlh3LhxOJ1OIiIi8Pf3V3PS8fHxKIpCcnIyDQ0NJCcnExUVRU1NDQ0NDYwePRp/f3+y
+      s7MJDg4mJiaG0NBQ4uPjsVgsjBgxgvr6er755hsiIyOZNWuWuoZ+UFCQWk5ycjJlZWVER0cz
+      ZcoUNX6r1UpjYyMNDQ3ceOONhIWFUVxcjMPhYNCgQQwbNowDBw5w+PBh5s6dS3x8PFFRUWRl
+      ZWEwGBg6dChRUVFkZ2cTGRnJ+PHjCQkJAdyraGZmZhIaGsqCBQuwWCwMHz4cRVHUOgBqfCEh
+      ITQ0NDBw4ECioqKIj4/n4MGDamzBwcFYLBbGjh3LgAEDMBgM6lIJLS0tREVFcf3116PT6bDb
+      7aSmpmI2m/H39yc0NJTw8HA1xXPq6qNt8QcFBanLSpy6D5OSktTlMwYOHEhwcDC5ubnExcUx
+      duxYdDpduzYMCQmhsrKSuro64uPjSUlJ4ejRo2RnZzNlyhRGjhzZoQ1PXwxQEITzh89NBGt7
+      6MzixYvVTlMQBMEX8TkB6GzJaUEQBF/E5wRAEARBcCOXwoIgCD6KCIAgCIKPIgIgCILgo4gA
+      CIIg+CgiAIIgCD6KCIAgCIKPIgIgCILgo4gACIIg+CgiAIIgCD6KCIAgCIKPIgIgCILgo4gA
+      CIIg+CgiAIIgCD6KCIAgCIKPIgIgCILgo4gACIIg+CjnLAB2u/18xCEIgiD0MnIHIAiC4KP0
+      WADS09OpqKho9966deuoqqpi3759Z/xufX19u/9v3ryZTZs2UVZWBsCmTZs6/Z7T6WTz5s1s
+      3ryZ1tbWLrc7FUVReOGFF9i9ezdNTU0AZGVlnfV7p/P555979D1BEARvo0cC0NTUxMqVK/n4
+      448BaGlpYc+ePWzevBmdTgdAeXk5DodDfc3Pzyc7O5uGhgYeffRRcnJyaHss8YcffkhAQABL
+      ly7F4XCg0+mwWCyUlpbyzTff4HA4APjoo48oLy+ntbWVyspK9Ho9jY2N5OTkkJOTo/7OgQMH
+      1FizsrIYPHgwiqLwr3/9i8zMTHJycnA6nezatYuqqiocDgf79+8nNzcXgLKyMioqKrBYLOzb
+      t4+ioiIWLFjA6tWre9JsgiAIXkGPBGD79u3ceOONFBUVAfDYY49x7NgxmpqaqK2tZc+ePbz/
+      /vs0NDTw3nvvUVBQwMsvv0xhYSFVVVU0NTVRWlqqltfY2EhWVhaDBg3CYDCwceNGsrOzee21
+      19iyZQvp6ekADB48mIyMDAwGAwMGDOCrr76ipaWF/Px8nn32WY4ePcp7773H+vXr1av1b775
+      hmnTpjF58mRKS0tZuXIlN998M6+99ho1NTU89dRTnDx5ktLSUlasWEFxcTHPP/88r7zyCqtX
+      ryY9PZ3s7GwMBgNBQUE0Nzf3pOkEQRD6nB4JwNatW9m0aROFhYWUlpai0+m45ppriIyM7HT7
+      qKgoRowYwfbt2wkODmbAgAEsWLBAvVuIiYnh2muvpampCYvFon5vxowZTJ8+HZvNBsDUqVN5
+      9tlnycrKIiMjQy07NzeXpUuXUlJSQlNTE0ajEavVCoDVaiUoKAiARYsWMXbsWPz8/MjPz6es
+      rIx+/fpx7Ngx9u7di8PhoLa2Fn9/fx577DEWLFiA1Wpl7969KIpCYGCgCIAgCBc8HguA3W7H
+      brfz5JNP8uCDD5Keno7BYODFF19s5wlERUXx4osvkpWVRUVFBU1NTdjtdpqamggPD+eZZ57B
+      5XIBUFpayttvv43dbicgIAAAnU6nCkQbq1ev5qWXXqK4uJhBgwYBkJGRwZ49e/jss88YOnQo
+      zc3NKIqidvpJSUkcPXoUAH9/f/z9/QGYOXMm5eXlmEwmampqaG5uxmazodPpCAgIQK/Xk5eX
+      R2BgIJWVlSiKQlVVFREREZ42nSAIglegU9oS8N3EbrdjMpk6/UxRFJqbmwkMDOT1118nNjaW
+      a6+9tt3Vt81mQ1EUAgIC2m1/rthsNoxGIwaDodPPXS4Xdrtd7egtFguvvPIKDz30UIdtW1tb
+      MRqN6PV6mpqa1FhPpampCX9/f0pLS/nyyy+5++67zzlmQRAEb0JTATiVgoICkpKSOly99yUH
+      Dx4kKSkJs9nscRn79+9n5MiR+Pn5aRiZIAhC73PeBEAQBEHwbmQimCAIgo9i7MmX33rrLUJC
+      QhgyZAiTJ0/WKiZBEAShF+iRAOj1eq6//nrJhwuCIFyA9CgFFBcXx8cff8wnn3yiVTyCIAhC
+      L+GxADQ3NzN16lRuuukmqqqqtIxJEARB6AU8TgEZjUbS09NpbGxk4cKFWsYkCIIg9AIyDFQQ
+      BMFHkWGggiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAI
+      giD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAI
+      giD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAI
+      giD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAI
+      giD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAI
+      giD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIgiD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAI
+      giD4KCIAgiAIPooIgCAIgo8iAiAIguCjiAAIguDjKDjyN2L74gEc+RsBpa8D6jWMfR2AIAhC
+      X6JYq7FnvoFSV4KrrhhD3AR0gf36OqxeQe4ABEHwbfyC0YUOBHC/+gX1cUC9hwiAIAiCjyIC
+      IAiCb9PaiNJQBuB+bW3q44B6DxEAQRB8Gl1gPwwDUgEwDEhFFxjZxxH1HiIAgiD4NEpzHc7y
+      LACc5VkozXV9HFHvIQIgCIJvYzKj8w8DcL+azH0cUO8hAiAIgm/T2ojSUgvgfhUPQBAEwUcI
+      CEcfNQLA/RoQ1scB9R4iAIIg+DZ2K4qlHMD9arf2cUC9hwiA4HUojhYUaxW+NCVfELRFQbE1
+      oNgaONN5JAIgeBWKowXbhkdo+ewXOPI39XU4gi9gCkQXEgfgfjUF9nFAPcdVlYdt7X3Y1t6H
+      q+pol9uJAAhehVJXjKtkO0pdCc689X0djuALtNThqjoC4H5tqe/jgHqO8/geXBU5uCpycB7f
+      3eV2IgCCV6ELT0QX3B8A/cC0Po5G8AkuQhNYHzPavaaRX7D7766268WYBOGsKNZqlBb3RByl
+      pqCPoxF8As1M4O7l3XsDpeEYOFrA0eL+uwtkOWjBC9H1dQCCcM64qvJo3fo8AH4zHkAfNcyj
+      chSXA1rqICAcnb4nXfTZzyO5AxC8Cl1gP3T/uwXXRSb3cTSCT6CRCdzdvPuZUFwO7Jlv0fLZ
+      L7BnvuUWAw/QhcaD0R+MAe6/u0AEQPAqlLpilMYKAFxl3/RxNIJPoJEJ3N28+9licRZudg+C
+      KNzscSyukwfdM5pbG91/dxWzZ1EKwvlBTGCh19HIBO5u3r03YhETWLggERNY6HU0nQncQ/9K
+      o1jEBBYuYMQEFi481Lw7ujPm3XsPMYGFCwwxgYVeRyMTuLt5996IRUxg4YJETGCh1/EyE1iL
+      WMQEFi5IxATuHMXejCN3HY7cdSj25r4O5+LCh01g8QAEr0IrE1i7yTTegbNwC61bngJ0+AHG
+      4Qv6OqSLh86MV/9QDws7DyawB7GoYoTO/XdsSqfbyR2A4IX03AR2HlnT48k03oeY495Md/Pu
+      vYeYwMIFhlYmsLM4o8eTabwJ7+tcLiLEBBYE70ArE7gt79mjnK4meXcFV1Uu9v2rcFXl4eki
+      YZp0LkLn+LAJfOEnR4WLijYTWGms6JEJ7PqfCdeTPKoWeXfFZqF16/Pu9WH6j8V/4QvoPIhF
+      7VzQed65CJ3zP+PVWVeijQl8lrx7b8TS3eNF7gAEwHsew+h9M4G9I++uyQgToXN8eCawCECf
+      oqBYq1AcLX0bhdc9hrHnna7+f3nP3sijnhFNHzfoHWIkdI73+TRiAns1jvxNtHz2C2wbHulT
+      EfCmxzBqZQK35T17I496RjTK6Xpf53IRISaw0Bc489aj1JWonW9f4U2Tr7zJBNbE1NNoYo83
+      mcDeZI5rgg+bwCIAfUhbZ6sLjkUXntBncXhT3l0Xngj+0Sh2J/oBUzwup4MJ7AGa5N01yulq
+      0rloRJs53rrlaZyFWzwqo80ct2//K61bn0OxWbQN8lzw4ZnAIgAeooVpqtTku19b6lCs1RpF
+      5inekV9WGiqxl5XiqLLgKMrp63DwnnbxNhPYO9pFk+fwigksnAveZ5r2DK9bgVNRwNWzlICY
+      wOcPb2oXV1UetrX3YVt7H66qo57FohHe59OICXxe0Mo01UUOcb8GhKML7KdVeOeMN63AqQuO
+      QhcYAYA+ZrjH5YgJfP7wpnbR4jm8YgIL54RWpmlbZ6s0nhAT+H+4qgpR6t23wI78DI/LERP4
+      /OFN7eJNxqs3xSIm8HlEK9P0YjOBleYa7PtX4SzZgaf5WH1UErow9xWQcch0j2MRE/j84U3t
+      4k3GqzfFIibweafn+diLzQS2Z76JfftfsW14GFfDcY/KUBqrUKy1ALhO5vY4pp7jHXl3MYHP
+      hHcYr94Ui5jAXdLz2bfeZpr2dESSt9VHC8QEPn94U7t4kzfiTbG4ERO4A1rMvtXKNNXCBNZi
+      RJI31UdM4M7xps7Fm9pFk1iMZhQicNZZUYgAo7nvYhET+PyixexbbzKBtRiRpNnkKw3qo5UJ
+      rOs3CsXuRBc+TExgjfGmdtEiFsVah6MkG1eTDUdJNoq1rs9iERP4PKOF8epNJrAWYqTV5Cst
+      6qOVCew8dtRdn5KjYGvyqAxvMjvFBD5/segCwzHEudvUEDcaXWB4n8VCQDi68GG9dvHicwKg
+      nfHqHSawZss4aDD5SpP6aGQCKwo9ro8b78i7iwl8JnoYS6sVV527TV11x6C1D01gWxOOkt67
+      ePE5AdAC7zNNe3bQaZV39yb0kYPcr+Hx4CcmsJZ4U7t4kzeiaSy9dPHicwKgifGq1cxZcwLO
+      OiuuFhO6gEiPitBCjDTLu3uRCews2+9+LT/ocU7Xm8xOb+rovKldNInFL9B9oUDPLhi8KRbM
+      sTgbXTgbXWCO7XIznxMALYxKrUxge+5WXE02nBUluKoLPSpDCzHSbPKVF5nAhoHux/H1JKfr
+      TWanNiawNkswe1O7aGUCO8vdbdqTCwZvisVZug9XbTWu2mqcpfu6jtmj0vsEBWfJDuz7V6E0
+      13hcin7AFBS7E/yj+9wEbutsdWFx6PsleVSGFiN4tMq7a9G2molRTan7tQc5XW8yOzXpXDRa
+      gtmb2uViM4G1isUQnwL+weAf7P67Cy4YAXA1HMe24SHs2/+KPfMtj8txFOXgqLJgLytFaajs
+      QUQ9z8e2dbaKtRalscqjMrxp+WQt2lZmAneOmMBn4iIygTWKxVVbCvYWsLe4/+6CC0YA3Gh0
+      0LmU/w0T8TCKgEhcLSacdVYwD9Impp7QwxE8mprAPWxbrXAFxmOzOHD4xfatCazRJKP/RdSD
+      76KdId3N/HJvxOJN3ogm7dLLXDACoNXIm7YOThcYgS44yqMyXFWF7rx9kw177tY+jUWLzlu7
+      FTi1qU+rIwSbxYErbKjHsdiOZmG3OrHlZ+NqrPWoDC3y7lpNMtKko9NqCeZu5pd7IxatjFeH
+      KbbHFwyatItGJrA+YhCYAsAU4P67q+08Kr0P0GrkTVsHp9SXe2y8apWn1iIWLTpvb6qP/UQB
+      rSfKsFudtOR4Lq5+SRMAMCWORR8c4VEZ+uhRKDozis6MPnqUR2VoldPVpKPTyHjtbn75bLFo
+      MuFJg33kaqzFVpDd4wsGLdpFMxP42H6wNYKt0f13F1wwAqDVyBstjFet8tSGpGm4HC6UoFiP
+      Y9Gi89aqPlq0rSk2GUPkAAD8R1/mcSyOSvcoJGdVKUqLZ3lUZ0URjhOVOE5U4qwo8iwQjXK6
+      WnR0Whmv3c0vnxGNJjxpsY/0wRGYEsYCPbtg0KJddIHh6GJG4XK40MWMEhO4Da1G3mhhvGpF
+      S8EhmmvtWMtO4qy/8E1TLdrWWV+Jq9E9ystx7IhmsXmMq+czpLVAEzHyRrRo2x7uI6XFirPa
+      3WH35IJBC5QWK83FRTTX2mkuLvY4FjGBzyNamqaKS4uIeob3zQTu+X42RruHoRqiBqELOL95
+      1DOi1cQe6LkYaWUChwyktcVIa4sRQgZ6VkYv57p7Ay1jcfcL5//C44IRAG8zgbUwTY3x/8vH
+      BkdiCIv2qIyLzQQ2hEWrt+Bt7eMJrYV7AbAX53ic0+1uHvVMaDbJSIvORSPjtbVwL6219e5/
+      /2vnc6W3c91nQhcQiKGfu017csHgTbF0V6QvGAG4GE1g20G3yemsOYb9hGdpLa1MYCUoFpfD
+      hSG5701gZ437aWK2g9s8jkULE9gwIAXFEIRiDMIwwDNTTysTWIvORSsT2DR4AjpzCDpzCKbB
+      Ezwqo7cnPJ0JV2Mt9hL3HJqeXDB4UyzdFekLRgC0WrPem0xg/9EzADBExmOK9eyuRgsxctZX
+      Yi07SXOtnZZ8z9eav9hM4NYTRVhPNmCtaKD1RLFngWhkAmshRlqZwM6qYpTWZpTWZpxVni35
+      0dsTns6EN5nAWsXSXZG+YARAqxmv3mQCt5mcrsYarzCBe+pHXHwmsA7FO+a1aSNGmuEdXpxW
+      eJsJrEUs3RXpC0YAAE3WrNcC7zNNe4ZWeXft8A4T2BCVgM7PjM7PjCHKs7WNtDOBNRAjjWYl
+      e1O7eJMJrIk5rhndO4cuGAHQ7FmxYUOxWRy0OkLEBP4fWuXdLzYT2F60F6XZgtJswV7Ut2an
+      Fp2uVrOSvaldNDFe/QNpCU7A0qyjJTgBnb9nYqSFOa6VCdzd4+WCEQCtIQf2iAAAG0dJREFU
+      Ot2WnHTsVqd7tqmHxqtWpqm3mMCa5d0vMhPYm8xOLTpdrWIxDp6A0y8Ep18Ixr42gTXwRhyW
+      WhryD2Bt1dGQfwCHxTMx0uJ40coE7u7xcsEIgFYjb7QwXrUyTbUygXsqRlrl3bWY2exNJrA3
+      mZ1adC5axdJ0vISaWhs1tTaajvdtu2jhjRhDIvBPHIPDBf6JYzCGeDhSS4PjRUzgLtDK7NTC
+      eFVj6qFpqkUsWomRFnl3LWY2e5sJ7C1oIkYa4i3muBbeiKPZSmXJMWqtOipLjuFo9tQE1uA5
+      4WICez/eZ5r2TIy0rI82M5t7fiI5wnue09XK7NRipUlNxEgj49W/fwJ6fzN6fzP+/fu2XTTZ
+      R/+jp+NLtIyl54gJ3ClaGK9a5am1iEWLzvtiqw9AQ+7+Hud0tci7a7XSpBKRQKMzkEZnIEqE
+      5yawFsZr09F9OK0WnFYL1qOeLXusVbtosY8M5kDM/d2jdsz9B2IweyZGmvg0GhnS3T1eLhgB
+      0MoE1sJ41SpPrUUsWnTepthklPB4HE4wjZrhURnu3/eO+gAEDRkPQOBgz3O6WuTdtcrpNh7d
+      R1N9o/ufh52uVsZr0NDxGAJDMASGEDh0vEdlaNUuWhjS9oZaGvLdxmtD/gHsDZ4JoxaxaGVI
+      d/d4uWAEQKuRN1qZwFrkqbWIRQsxaq2tpOpELbVNOuryPfdXTKNm4HCCEt6z+mgiRifdec/W
+      yjKcfWgCa5XT1aLT1cp4tVWU4LI147I1Y6vo23bRwpA2hUYQOsQtRqFDxmAK9UwYtYjFGBJB
+      4OAxQM8uXrp7vFwwAqCV2amdCaxBnlojE1gT01QBl9KzOtXl51LbpKPqRC2ttZ7VRysx0gbv
+      MYG16HQvVnpqAjubrTRXlAHQXFGG02MTWINYWqy0Vrpj6cnFS3ePlwtGANrwhuWTvc8E7llH
+      ZQqPxhgaCYA5oSczm3VuEenp6BANxMg/xp339IsZiKEPZwJrtrqjFmhkvGphAmuV6zZEJdCo
+      mGlUAvvceNXEHO9lLhgB0IdG02iIxNKswxkz0uNyLjYTWIt2aTleQGuVuz4N+z2vT5t4GEMj
+      MYV7Vh+txKgp3533tBb2vQmsxcQeLToXrYxXLUxgrXLddUf20VjfSGO9hbojns0E1soE1qJd
+      DAGB+MW4Y+npxUt3hPGCEYCW4wU0nijH2qqjbp/nndTFZgJr0S4BA5Lxi3LXJ3Sc5/VpE4/W
+      quO0HPdsJrBWYqSFCayFqaeV2alF56JVLIFDxqP4h6AEhGAe4pkfoVWuO2zEeIyBIRgDQwgb
+      4dlMYK1MYC3axWGpxVp4AOjZxUt3hfGCEQCtOiktjEqt8u5axKJFu9jrKnE0uOvTXOp53j14
+      7GU4XKCLHEDAAM9mAmu1n7UwgbUw9bzJBNYqloZjpVTVtVBV20LDMc+WPdYq120tL8Vpa8Zp
+      a8Za7lksptAIgpLH4nApBCV7bgJr0S5azUrurjBeMAKgVSelhVHppucGoRaxaNUuWlB5NNc9
+      m/JELS01F359wHtmvHqbCewt7aIF9mYrJ4pLqWmGE8Wl2PvQBNZqVnJ3hfGCEQDt6LlRqZ0J
+      rJFp2kO0M4Hdsym9oV9QIhOwtIA9fBD685xHPRNamZ1aoFUsgXGDMPibMQSYCYzzbAlmfUAg
+      9rCBPd5HWsQC7mO2p8euqf8gmgigiQBM/Xu2NHVvrXp/wQiAMSwaq18/LC2gi/O809XFDcfS
+      Ala/fhj72ATWIhYtOm+t8u4hg92/7xcWiX+EZ/XRaj9XH96H1a6jJtfznK4WBqNWZqcWYqRV
+      LPVH9uGwWnA0Waj3sF3sDbXU5B3o8T7SIhaTOZCQOLfxGhI3EJOHJnDlwX001FtoqLdQedBD
+      E9gciCsyngabgisy3mNDurvCeMEIQNOxAurLj2O16zi5x/NO6uSebVjtOurLj9N0zDOj0hAx
+      gFb83Pn7fol9GosWnbep3wDs+OFwgT7K8/pUZbl/v+Wk5/XRaj8H/u8KzC8sEmNQsEdlmPsP
+      Ar0e9Hp1lMi5og8MQQmMxOECJTASfaBnsWghRlrFokW7GAJDIDgSh0uB4EgMHsbiFzMQu6LH
+      rujV0TPnSkt9LVW5buO1OvcALfWeiVFw3EB0ej06vZ7gOM9jOXH4AFY7VBz2PJbuCqPRk8Jt
+      Nhv+/v7YbDaAXvnbGD2QsLgBtFYdI2rCpR7HED42Dcvur/CLiscYHe9ROc6q49TW29HrdDhK
+      SwjxsF4xky7DsvsrDJFx/P/2zqa3jeRO4091N9kUxRdRlmRZlmV7ZHs8fhnPZJDJZjO72OQw
+      QXKY0y4QINd8hv0G2dte59vsaTfAYoMBgiQ7k2CSsS3Lki3rhbJkipJI9h6a4thZ2UNVPyaL
+      rOcHCGzAZvHf1dX1J+tXVT158apV/Zhzi8jPLOBocw3xux/3rs9ZyqmvPsD2Xno+4aMVLFjW
+      beX2x9j47/9AYW7Bum4nL76D0vl5tLfXMfe9T6zbTONpOu55tLuN5vM64loO7XYbYRim17CP
+      4+er94FOuvDk+eP7ONdq9f3ek+PD53VsP9vGQcOg+WwHL3a2UJyZP3M55Wt3UKqWkSQJqjfu
+      4vDw8Ezn0m630d7bxeaTTRw2DBpPN3G4t4sQwZnLOXj6qFcve2sPcK7VOnPd7u9sYXNjG3sH
+      wPHGFg6e1zERnf0abTy4j+0X7d7x3A/Ofo2iUgW15ffwfOUbnLtxG6ZQRMviWtdXHyLp1sv+
+      +qrVNYpKFcxeu4n2+jeYuX4TUalsVU7lxvsIJ0owgUHp2m20XnONRuYXQKv+DMWjLVQKQLJu
+      Lwc7639GpQAUj7bQslx9W1h4B6X5BRTywNQ9+5kqCSGWV6Wp3YykycV3UL2wgDhKMPc9+/PZ
+      e5B+/tHutrXUbu2+fJ3tZ1idu3kPE7kE0zduI1+xm+44dfMeStUyStUypt61m3mTr9QwfeMO
+      4qgbS9kulvbmCkqmgUnTsN6WIl+pYe6925ie7GDupn299GaYTNrXS1yp4eKt25ieAC7euo24
+      ahfL3K17KFfLKFfLmLtlOfWy0cD+k3RG0t76KloHL+xiee8eKtUyKtUyZi1j6Rw0EOysohwb
+      BNuP0bGWwCupBG4eoLH++vZi9QsgjuNXXgdznO8dB0FgH0M+xl7vOG9VTuvZCkrtLSSFBOHG
+      nzKcl0FgEiAM7M4ljoGX6iXO29VJeLCL4tEWCt1O17Zu8/kYgUnnR+Ut6/YQQBgE6PT5/193
+      bLZXUCkAufojmONDRHEBUfRtc+/nOKivoWQaveMo+kHf7z05bjVfIFd/1IslSlqIoskzl3Py
+      zS0wBsaYV86533I6L3Yx21pFdSpBvrWK4LiJaLJ65nI2uzNMAOBwYw3R3Y/PXLdovsBUYxW5
+      KjDZWEVgeY2S7SeYRLN7vN77t7OU045CBMG334XzcWxVTmdrrRfL8dNHiO98dKZziaIIx0dN
+      hOG31zwMQ+QsrrUxAYwx3XIiRFF06v8fmV8Ar8jOS/YzVU7em2W1akr2aaBTy9dRm0wwM19D
+      3lKasuqFwez1G6gVE8zO11CYHv3zYRKYbNM6RnGbgVGBJYEZsFYl9yRwPCYS+BXZ+Qd7OXjy
+      3iyrVVnTQI+/+k9EIWDq2VYCZ60XVqe7/4f/QhQAyTZpJXCG69zbC2jWfjk9o9MNJ4qYvnQR
+      tckE00v2szoYK4FZ+xL127m8ibBQRH62u+VBhmvEiIUlgRmxsFYl9yRw480SeGQSQDrufgHF
+      OMk07j517xMU4yQdw7dcrcqaBsrYDppRL6xOt/J++vn5GdJK4Pftr3NvL6AH9tMdWQ8+6az+
+      EVEIdB7Z7wXEWAnM2peo387lTbT2dtB40N3yIMM1YsRSqNYwf/M2JnPA+Zu3Uajarb5lxJLr
+      OqMTf2W7Knnq3Zf91RisBO48f4ZSewvl7ri7LeHGn1AuJCi1t9B5bicqaQ8uJ2wHzagXVqd7
+      sJKeT+v5No7rBKm9Yi/7e3sBXbVfTl+6dg+T1VL6l+XBJ5ez77/DWAnMiqXfzuVNROUaKsu3
+      UYwTVJbtrxEjlvZBA8H24554td0OmhFLp9l4xRl1rJ9lkU4aKH3HpIGRSQApbuzP7taDy4Gs
+      9cLqdHtS24HL1NsLaMN+nxmz8xClsIFS2IDZybAX0Gb2/XcYsGLpt3N5YyyHDRT2V1AuJCjs
+      ryA5HF4sLFyKpV9GJgGwxt0ZWzCnZO/lXHqGLkx2UTluUtuJTNaFJ4ENTJC+ihSWeAUAY9I/
+      61hIbqTf9jIyCYA17s7YgpnV6bryDN18bRYz52uoTSaYWrbvdF2R2gBHArv0QBiWBJ64fBkT
+      tRwmLl+2joXyQBhSvTBiYYnXyYUlTNdiTNdiTC7Yb9fBcCP9tpeRSQC5+XeQn19EbiJE4Y79
+      s2IZ4tUlCczwEcdPvoHZfYwoTDtxW1yR2gBHArv0QBiGj0gadSQbXyGIAiQbXyFpDFeOM+qF
+      EQvrmcCtB79DeLSH8GgPLcv2wnIjY/dM4GR/E/loD3ElQrD7F+tyGOLVJQnM8BEunQ9L9jMk
+      cO7KBzATZZiJMnIZHggTL99FbiJEvHzXWrwyfIQpTiG8cAsAEF64BVN8u53Lm2AJaUZiZD0T
+      mNFeWG5kbJ8J7AIuSmCT4UoyzydLHC+VkrkEhgRubz5EcnSA5OjAXuodNRAdPUFciRAdPQGO
+      bCUwYcz+qIFO/TEApK+WsTBmJLGENCMxnhBkrGJKeyHSj48YmQRgSjMwxfRbQjBnP049jhK4
+      uDiHiVoOheVbGaLJfj6F5VuYqOVQXJwbvtRGdqntkihl+AgmWWVntxSCkCbchxNFzC5dTFex
+      L11EZC2Bs8fCciP9+oiRSQCdzftIdtcBAK2//sa6nHGTwJ3N+zAvniCIArS/sasX1vm0v/kN
+      giiAefEEnS27lcAsvzK1eCnz6ltKp5svIpi6CADpa94uFoaPYMXCkJ0sIc24Rq29HRw+/F9E
+      AXD4MNszG7LGwnIj/fqIkUkAwcxVmOoFAEC0/CPrcgp3/hG5iTAVymMggRn1wjqfk8831QsI
+      ztmtBKb5iIe/y7z6ltHpJo062utfAgDa619ai1fK+DIpFobsZAlpxjWKyjUUr3YfUJ/BGTFi
+      YbmRftvLyCSAZH8TSSO9kTsb9ouVgt2/IK5EyEd7SPY3rcpgzUhiSFNGvbA63ZPPTxo71nXL
+      8hH5q2mjH8RN9CZY4pUxvmyKU4iW7iIoxYiW7lrH4lK95K9+gHytmv5dtYul3WzgaKP7gPoM
+      zoiSpGmL9fprLyOTAACkg45ZTQ0B1owkV3BRamel9Sxt9IO4id4ISbwCJvu4e+sABjsIq0UY
+      7ACtA6tinKqXvVXkCy3kCy1gb9WujC5ZnZFbEri/hjIyCcBUZpFbXEQ0U0Z05Y51OScC2RRr
+      MKUZVnhWMCQwS45nnUn08udnqVumBM4OodMlkZ+/jOJcBcW5CvLz9o/t5OBAhRBh7djKaC8s
+      CdyvjxiZBJDUHwKHmzC5EJ2131qXcyKQk911a1HJ6nRZEjirHGfNJGLULc1HzKaNPstNROl0
+      SeK1vfZ7mPYLmPYLtNfsdppErghTTn2RKV8AcqMvx4PaJSBXAHKF9NgC1o6tjPbCksD9+oiR
+      SQBm6jJM6TwAIFj82LochqhkzUhyRQIzZhK9/PkuSOCj+2mjz3ITMTpdlngNL74PxCUgLqXH
+      NjTr6Gx2vdPmn4HmrlUxLsnx9uPfA4f7wOF+emwBS7wy2osk8GtIGltImmkjSbbtvi0DHFHJ
+      mpHkigRmnc+4SWBGp8uSnZ2dR8BxEzhupsc2FKYQzHSHHWfeBQrV73jD6bgkgRnXiCVeXYpl
+      PCWwI2OPrBlJAGvlbDaY58PBDQlM6XRpEhjpBIgskyCOG0j20l+uyd46cDz6cpxyjUi4FEu/
+      PsKB7qc/TPEcTPcbi5m2Gy4B3JLAjJWzPAmcnfGTwO4Qnr+CaH4W0fwswvNXhhyNO3IcQObE
+      yBKvDFix9OsjRiYBJPWHSPafAgA6q/9jXY5LEpixcpbhI1jnM24SmCEYWbKz8+wrmOQAJjlA
+      59lXdrGQJLBLcpyRGFnilSWkGbH06yNGJgGMowRmxMKSwK6cj1MSmCAYWbIzmLsF5CeBfCk9
+      toEkgV2S44zEyNqxlSWkGbH06yNGJgGMowRmxCIJfDrxtQ+z30SX7iGonUNQO4fwkt1WwyzZ
+      mTx/DLSaQKuZHttAksAsOc5YlUxJjKQdWykztUix9OsjRiYBpLgx6OieNM2Ge+dDWJTWeJx9
+      C+aDJwhLBmEpAA6e2JXBlMBZ2z9JAlNkJ2lVMiUxknBLAvfHyCQA5yQwYVsKRizjKIE521uz
+      IH3pyNhWTOUiEMVAVEiPh03WGUlUMsZB8hFpARnrZcAL5EYmATglgUnbUjBiGTcJzFqUFkyn
+      jT7LTUTpdONJREvX0raydA2IJ62K6Wx8CRy9AI7202MbWCuBGTOSSLEwrhFtsR6hXga9QG5k
+      EoCZuoxg6e9hppYQXv+pdTm5G58gKMUIzy9Zi0rWthQsCRyeX0JQipG7YbczKUsCM+qW5SPa
+      q2mjzyQYGZ1us46k/jVMLkRS/9pavLokgSkzklixEK4RbbEeoV4GvUBudBJAVED86a9R+Oxz
+      RMs/sS/o4BHCahFB4RhJc9suFtKMJIoEbm4jKBwhrBaBA7txR1any6hblo8IF9NGn+UmonS6
+      JPHKksDh1R+nX6Ku/tg6FpfqhSWBGZ7GpVjGUgKbqABTPIdhy2DWjCQA6Xhh5hU12d7vngTO
+      Tmc7bfRZbiJKp0sSrykZPUIQIff9X6Hw2efIff9XMEFkVY5L9eKSBKbGwvArffiIkUoADMz0
+      cvpamOomE+uSMscSXbmDaKaM3OIlmIrlSmCSHGdIbUbduiS1U9wQnSwJbIIobTOWnf9LJWV8
+      PxOHJHDWWEjOqF8f4V0COBHIyf4TJHXbJytxOt3O2m9hciFw+Mw6FoYcZ0ltRt2yfIQzEpgk
+      Oyk+goRL9eKSBKbUC8kZ9esjvEsA4fWfwkwt9YSyDawZSSf+wJTmrWNh+AiW1GaczzhKYIbs
+      pIwvk3CpXlgSmLEojVIvA3Yj3iWAaPknKHz2OeJPfw0TFazKYEngZPuv6WuzjqSxZVcGwUc4
+      dT4kHxFd+cCNVaYuSWASLtULJRbSojRKLAN2I94lAMCkQziWnT9AlsAUMkpg586HwPEzN1aZ
+      OiSBWbhULy4lRpdiSfnu9pLVBHlM9puRIU2DygLiT/8NnfpDRNc/zRJNhvd2SyBK4GR3XRL4
+      JXrjyzBurAR2pF5SMsZy4iOe/jGTj3Apln7bi4e/ALJDk8AEaQoYhEs/RO79X8BMTNuV4ND5
+      0CRwt9EPWzBKAr8GhyQwy0e4FEu/7UUJwAKXJDAD1vkwBDtvZ9K00Q9bMEoCvwaHJDDLR7gU
+      iyTwW8QlacqA96yF7IKdJYFPGv3QBaMk8OmwtqZe+AjB+TsIzt9BuPCRXSwkHzGKElgOwIJx
+      k6a88zEZF9fx6HQbfe8miitnLqN3E8Gkx/MWe7yfdkNbxJLixri7S/USzFxD/PN/BwCYuHz2
+      OIhQ6oXKd7cX/QKwxg1pysONzkUrgU/Hue2gHakXwMDEFZi4AuuYSD7iJJ5MDNiN6BeABayZ
+      N38rTc3McDq8Ewmc7DezbSdB4G8lcPx3v7QqJ6hcRBukmyjLzBvSrI7e+HL3OBzit8vw6j8h
+      /9KxFdSZNxk5zUdYfCGjtBdSLP22F/0CsCL7zBuAI00ZsCQwA8b21oAk8NvE5CYQ3fgZohs/
+      g8lN2BVCqhcKksBiGDCkKQOWBGbA2N4akAR2HtLW1BQkgcVwcEOauie1s48vSwK7zcnW1Lm7
+      /wIUqoTdSYePJLAYYdzoXGjbW9NwpF6ck8DZ4W1NnRFJYOEzvO0ksvP/fMSdf7YqhyGBXZKd
+      LkngsUMSWPgNR2pTIqE9bjO7BHZJdrokgccOSWAh3IDlI8LLn7ghGEmyc+wksEtIAgvhEtnH
+      3cN3f47w8o+GLhi5stMNHyFOZxQlsBKAcArWojQTRFZjp28DRiwUHyFOR9tBC+EGLi1KcwmK
+      jxCno+2ghXADlxalCU+QBBbCDdxblCbGHo8lsBKAcBDJTjF6uDdTSyuBxYjh3kpgMfZ4vBJY
+      CUA4hSSwGDiSwEK4gSSwGDiSwEK4gSSwGDiSwEK4hCSwGD1GUQJrJbBwCpceTyk8waGVwCYu
+      I/8P/4r22hcIFz6yftB9vyuBlQCEU7C2gxaib0hbMHO26zAIZq4jmLlu+f6UfreDVgIQTnEi
+      gZP9p5LAYjB0xWu7vpJJvJ5s1+ECPR8BIwksRgdJYDFwSOLVJSSBxQgjCSxEdiSBxYjh0uMp
+      hSdQJbAb9OsjlACEY6SPpwyXfjjsQIQvkCSwS/TrIzQEJITwm3wJplADgPQ1PznkgAaHEoAQ
+      wm+O9pE0dwAgfe1On/QBJQAhhN+Q9t8ZRZQAhBB+M4bTQPtFCUAIITxFCUAI4TfUB8KMFkoA
+      Qgi/OdxDZ+trAEhfD/eGHNDgUAIQQniNmZhCeOFDAEB44UOYiakhRzQ4lACEEF6TNLbQXvsC
+      ANBe+wJJY3vIEQ0OJQAhhN/kSzCVRQBIXz1aCGaSJEnO8obj42Pkcrm3FY8QQgycpNVEUl+B
+      mVqCiQrDDmdgKAEIIYSnaAhICCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlA
+      CCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlA
+      CCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlA
+      CCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlA
+      CCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlA
+      CCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlA
+      CCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlACCE8RQlA
+      CCE8RQlACCE8RQlACCE8RQlACCE8JbJ50/HxMTuOvmm32wjDcGif/zKK5XRciaXT6QAAgmD4
+      33MUy+koltMZ1D105gSQy+XeRhwjF8MJiuV0XIil3W4DgBPJSLGcjmJ5PYO4h4af6oQQQgwF
+      kyRJMuwghBBCDJ7/A06fPoolgpXsAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
