@@ -121,6 +121,20 @@ Add a zeroline style rule so the negative quadrant reads instantly:
 truncation on cols — `[tyr:Order Date:qk]` (Year-Trunc), not an exact-date
 instance. Measure on rows, item on `lod`.
 
+**Log-scale axis (mined 2026-07-11, verified live).** When a measure spans
+100×+ (most dots pile into the bottom fifth of a linear axis, top is dead
+space), make the axis logarithmic. It's a `space` encoding with
+`scale='log'` in the axis style-rule, on the shelf's measure instance:
+```xml
+<style-rule element='axis'>
+  <encoding attr='space' class='0' field='[ds].[sum:PerfB:qk]'
+            field-type='quantitative' scale='log' scope='rows' type='space' />
+</style-rule>
+```
+`scope='rows'` for the y-axis, `'cols'` for x. All values must be > 0
+(log has no zero). Log turned a sparse, mostly-empty scatter into an
+even spread AND separated the two populations into clean bands.
+
 **Label only the standouts** (avoid 50 overlapping labels): a calc that
 returns a short name for notable marks and `''` otherwise, on the `text`
 shelf. Cleaning names reads better:
