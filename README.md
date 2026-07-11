@@ -95,7 +95,7 @@ learn grammar the docs skip, and write it down with proof. See
 
 ## Credits
 
-Built by [Blake Feiza](https://public.tableau.com/app/profile/blakefeiza)
+Built by [Blake Feiza](https://www.linkedin.com/in/blakefeiza/)
 with Claude. Inspired by Matt Huff's agent-dashboard experiments and built
 on [Will Sutton's Tableau Public MCP](https://github.com/wjsutton/tableau-public-mcp).
 The design knowledge draws on the Tableau Public Viz of the Day gallery,
