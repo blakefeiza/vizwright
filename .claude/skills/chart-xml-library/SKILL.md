@@ -99,20 +99,41 @@ Multi-line: add `<color column='[ds].[none:Segment:nk]' />` encoding — max
 Same shelves as line, `<mark class='Area' />`. Stack only when parts sum to a
 meaningful whole.
 
-## 5. Scatter
-Measure on BOTH shelves, dimension on detail (lod) to create marks.
+## 5. Scatter (render-verified: "Bang for the Flop")
+Continuous field on each shelf, a dimension on detail (`lod`) to make one
+mark per item.
 ```xml
 <mark class='Circle' />
 <rows>[ds].[sum:Profit:qk]</rows>
 <cols>[ds].[sum:Sales:qk]</cols>
 <encodings>
-  <lod column='[ds].[none:Sub-Category:nk]' />
+  <color column='[ds].[none:Type:nk]' />   <!-- optional, needs a palette map -->
+  <text column='[ds].[none:Label:nk]' />   <!-- optional, label standouts only -->
+  <lod column='[ds].[none:Entity:nk]' />    <!-- REQUIRED: the mark grain -->
 </encodings>
 ```
-Add a zeroline style rule so profit<0 quadrant reads instantly:
+Add a zeroline style rule so the negative quadrant reads instantly:
 ```xml
 <style-rule element='zeroline'><format attr='stroke-color' value='#c0c0c0' /></style-rule>
 ```
+
+**Time scatter (dots over release date):** put a continuous date
+truncation on cols — `[tyr:Order Date:qk]` (Year-Trunc), not an exact-date
+instance. Measure on rows, item on `lod`.
+
+**Label only the standouts** (avoid 50 overlapping labels): a calc that
+returns a short name for notable marks and `''` otherwise, on the `text`
+shelf. Cleaning names reads better:
+`IF [PerfB] > 18 THEN REPLACE([Entity],'NVIDIA GeForce ','') ELSE '' END`.
+
+**GOTCHA that silently blanks the whole worksheet (cost several renders):**
+do NOT add `<tooltip>` encodings that duplicate a field already on a
+shelf (e.g. `<tooltip column='[ds].[sum:PerfB:qk]'>` when `sum:PerfB` is on
+rows). It renders the sheet blank on a white background with no error.
+Use a `<customized-tooltip>` that references on-viz fields instead
+(fields already on rows/cols/color/lod are available to it). Same failure
+signature — blank white sheet — means "this worksheet errored," almost
+always a bad encoding reference.
 
 ## 6. Filled map (US states)
 State dimension on lod + auto lat/long. Declare the geographic role on the column:
