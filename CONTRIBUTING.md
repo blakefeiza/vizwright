@@ -26,3 +26,12 @@ a live Tableau render before writing it down. Keep that bar:
   The miners rebuild them locally (see `knowledge/README.md`).
 - Back every grammar claim with a source: a corpus example, or a render.
 - Run `validate_twb.py` and `lint_design.py` on any twb you touch.
+
+## Tests
+
+`python -m pytest` runs the suite (`tests/`). It covers every coded tool —
+significance testing, the render gate, run-state, consistency, structural
+validation, the design lint — plus an end-to-end happy path that builds the
+specimen workbook and runs it through both gates. CI runs it on every push
+and PR. Add or update a test for any tool you touch, and make the suite
+green before opening a PR.

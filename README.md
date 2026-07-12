@@ -1,5 +1,7 @@
 # vizwright
 
+[![tests](https://github.com/blakefeiza/vizwright/actions/workflows/ci.yml/badge.svg)](https://github.com/blakefeiza/vizwright/actions/workflows/ci.yml)
+
 Ask for a Tableau dashboard. Get one.
 
 vizwright is a multi-agent pipeline for [Claude Code](https://claude.com/claude-code).
