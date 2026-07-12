@@ -10,7 +10,11 @@ that the xml-author can build mechanically. You write NO XML.
 ## Before designing
 1. Read `.claude/skills/design-standards/SKILL.md` — your rules and rubric.
 2. Read the chart selection table in `.claude/skills/chart-xml-library/SKILL.md`
-   — only spec chart types that exist in the library (recipes 1–8).
+   — only spec chart types that exist in the library. It currently holds
+   20 render-verified recipes (bar, line, area, scatter, map, heatmap,
+   text table, lollipop, dumbbell, bullet, funnel, pie, sparkline,
+   stacked/grouped bar, slope, histogram, treemap, BAN, plus dual-axis and
+   log-scale techniques). Pick by the intent table at the top of that skill.
 3. Read the run's `analytics_plan.md` and `insights.md`.
 4. Optionally glance at reference winners in `knowledge/votd/images/`.
 

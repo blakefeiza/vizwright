@@ -25,6 +25,24 @@ analysis a stakeholder would pay for.
 5. Look for the second-order story: mix effects, offsetting trends,
    Simpson's-paradox risks (e.g. discount-driven losses hidden inside
    growing sales).
+6. **Test significance with code, not judgment.** Any claim that group A
+   differs from group B (regions, segments, categories, periods) must be
+   backed by `tools/stat_check.py`, never by eyeballing means:
+   ```bash
+   python3 tools/stat_check.py <dataset> --value <measure> --group <dim> \
+     --out runs/<run>/stat_check.json
+   # rate/proportion difference:
+   python3 tools/stat_check.py --prop <x1> <n1> <x2> <n2>
+   ```
+   It runs pairwise Welch t-tests, Bonferroni-corrects the family, and
+   reports Cohen's d. Then obey the result:
+   - `significant: true` with a non-negligible effect → state it plainly.
+   - `significant: false` → downgrade the prose ("higher, but not
+     statistically distinguishable, p=…"), don't headline it.
+   - Large n can make a trivial gap "significant" — if `effect` is
+     `negligible`, say so and don't lead with it.
+   Cite the corrected p-value and effect size in insights.md for every
+   comparison you make load-bearing.
 
 ## Outputs (write both files)
 ### `runs/<run>/analytics_plan.md`

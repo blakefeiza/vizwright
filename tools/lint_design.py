@@ -15,7 +15,7 @@ Checks per chart worksheet (non-empty rows/cols):
 Per BAN worksheet (Text mark, empty shelves):
   D6  text-format present (abbreviated number) + font-size style
 Dashboard:
-  D7  title/footer text zones carry a padding format
+  D7  title/footer text zones carry a padding format (ERROR)
   D8  dashboard title subtitle must not duplicate BAN values (heuristic:
       warn if a $ amount appears in a text zone AND a BAN sheet exists)
 
@@ -162,12 +162,20 @@ def main(path_str: str) -> int:
                 continue
             zs = ET.tostring(zone, encoding="unicode").replace('"', "'")
             if "attr='padding'" not in zs:
-                warns.append(f"D7 dashboard '{db.get('name')}': text zone id {zone.get('id')} has no padding")
+                # promoted to error: padding is a hard rule for worksheet zones
+                # (D10) and the design-standards rubric scores it — text zones
+                # were the inconsistent exception. Now enforced everywhere.
+                errors.append(f"D7 dashboard '{db.get('name')}': text zone id {zone.get('id')} has no padding (use 8-16)")
             body = "".join(r.text or "" for r in zone.iter("run"))
             if re.search(r"\$[\d,.]+[KMB]?", body):
                 has_dollar_text = True
+    # D8 stays a WARNING by design: a $ in title/footer text is USUALLY a BAN
+    # duplication, but narrative subtitles legitimately quote prices that are
+    # not BANs ("a $1,000 gaming card returns 31x more than a $30,000 H100").
+    # A hard error here would block correct storytelling, so it advises only.
     if has_dollar_text and ban_sheets:
-        warns.append("D8 title/footer text contains $ values while BANs exist — don't duplicate BAN numbers in text")
+        warns.append("D8 (advisory) title/footer text contains $ values while BANs exist — "
+                     "confirm these are narrative prices, not duplicated BAN numbers")
 
     for w in warns:
         print(f"  {w}")

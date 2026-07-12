@@ -52,9 +52,12 @@ markdown is the product.
 
 Four agents read those skills ([`.claude/agents/`](.claude/agents)): an
 insights analyst, a dashboard designer, an XML author, and a design
-linter. A static lint (`tools/lint_design.py`, 12 checks) rejects sloppy
-output before a render exists, so the agents spend their iterations on
-the story instead of chasing gridlines.
+linter. Coded gates keep the LLM honest at every step: significance
+testing backs the analyst's claims (`stat_check.py`), a 12-check static
+lint rejects sloppy XML before a render exists (`lint_design.py`), and a
+deterministic render gate fails fast on a blank dashboard before the
+design-linter scores it (`verify_render.py`). The agents spend their
+iterations on the story, not on chasing gridlines or shipping empties.
 
 ## Make it yours
 
@@ -79,11 +82,15 @@ taste:
 | Tool | Job |
 |---|---|
 | `tools/profile_data.py` | turns a dataset into a JSON profile the agents trust |
+| `tools/stat_check.py` | coded significance testing (Welch t-test + Bonferroni, effect sizes) so "A beats B" is proven, not guessed |
 | `tools/validate_twb.py` | structural lint that catches what Tableau would refuse to load |
 | `tools/lint_design.py` | 12 static design checks, the first-time-right gate |
 | `tools/finalize_windows.py` | writes the one twb section too fiddly to hand-author, and auto-locks map sheets |
 | `tools/package_twbx.py` | zips a twb plus its data into a twbx |
 | `tools/publish_render.py` | publishes to Tableau Cloud and pulls back rendered PNGs |
+| `tools/verify_render.py` | deterministic render gate: fails fast on a blank or missing render before the design-linter runs |
+| `tools/run_state.py` | persists the iteration counter to disk so a crashed run resumes where it left off |
+| `tools/lint_consistency.py` | flags palette/font/canvas drift across a series of related dashboards |
 | `tools/mine_votd.py`, `extract_patterns.py` | build your knowledge corpus |
 | `tools/build_specimen.py` | the chart-recipe regression harness |
 
