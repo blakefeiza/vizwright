@@ -466,6 +466,7 @@ def main():
   </windows>
 </workbook>"""
     out = ROOT / "output" / "chart-specimen.twb"
+    out.parent.mkdir(parents=True, exist_ok=True)  # fresh clones have no output/
     out.write_text(twb)
     print(f"wrote {out} ({len(SHEETS)} specimens)")
 
