@@ -104,6 +104,14 @@ design-linter agent using the rubric at the bottom.
 - BANs carry context: comparison delta (▲ 24.4% vs PY) in semantic color.
 - The subtitle states the question and period — never values that BANs
   already display (duplication + truncation risk).
+- NEVER use a statistical metric as a BAN/KPI. A p-value, correlation
+  coefficient (ρ, r), t-statistic, or effect size means nothing to a
+  business reader as a headline number and reads as jargon. These belong
+  in the analysis layer (insights.md, stat_check.json), and at most as a
+  brief parenthetical inside body text ("more spend means a better rank
+  (ρ=−0.59)"). BANs are the money numbers a stakeholder cares about —
+  dollars, counts, rates, deltas, named winners/losers — not the evidence
+  that backs them.
 
 ## 5. Text & annotation
 - Dashboard title states the subject; subtitle states the question/period.
