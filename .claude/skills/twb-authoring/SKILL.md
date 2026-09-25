@@ -45,6 +45,25 @@ Three hard requirements confirmed by live Tableau load errors (2026-07-09):
   viewpoints crash the loader with generic Internal Error 2805CF18
   (assert `HasVisualDoc` in DashboardController).
 
+**Gridlines on Server (confirmed live 2026-09-25).** Per-worksheet
+`<format attr='stroke-size' value='0' />` hides gridlines in the PNG export
+but NOT in Tableau Server/Cloud's interactive renderer, which falls back to
+the workbook default and draws a full grid. To kill them everywhere, set the
+WORKBOOK-level default with `line-visibility`, as a `<style>` block that is a
+direct child of `<workbook>`, right after `<preferences />`:
+```xml
+<preferences />
+<style>
+  <style-rule element='gridline'>
+    <format attr='line-visibility' value='off' />
+  </style-rule>
+</style>
+<datasources> ...
+```
+A worksheet that WANTS faint gridlines then turns them back on locally
+(`line-visibility` on + a dim `stroke-color`). Default off at the workbook,
+opt back in per sheet.
+
 Do not hand-write the `<windows>` block — after authoring worksheets and
 dashboards, run:
 
