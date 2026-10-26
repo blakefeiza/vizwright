@@ -38,7 +38,8 @@ publish it after changing any recipe).
 | — | "Exact values / detail" | Text table (sparingly) | 8 |
 
 Not yet in the library (need table-calc grammar; do not improvise):
-waterfall, bump chart, box plot, 100%-stacked via percent-of-total.
+waterfall, box plot, 100%-stacked via percent-of-total. (Bump chart is
+recipe 16b — precompute rank in the data, no table calc needed.)
 
 ## 1. BAN / KPI card
 Text mark, measure on Text shelf, empty rows/cols. One BAN per sheet.
@@ -304,6 +305,21 @@ Grouped: nest dimensions on the shelf —
 ## 16. Slope (two periods)
 Line mark, discrete year on cols filtered to 2 members, measure on rows,
 color by category (palette map), `<text>` labels on both endpoints.
+
+## 16b. Bump chart (rank over time)
+Rank race for the "who overtook whom" story. Precompute `rank` per period in
+the data (pandas), plus a `disp_rank` clipped to a floor (e.g. `min(rank, 13)`)
+so also-rans pile at the bottom instead of stretching the axis. Invert so #1
+sits on top with a calc `rank_inv = (floor+1) - [disp_rank]` and put
+`[sum:rank_inv:qk]` on rows (hide its axis). Continuous period on cols
+(`[none:Year:qk]`), Line mark, `State` (or whatever races) on `<lod>`. Keep the
+palette SPARSE: color 2–3 hero lines via a `story` palette-map field, grey the
+pack (recipe-2 focus-vs-grey logic). Label line ends with `State` on `<text>` +
+`mark-labels-mode='line-ends'` / `-line-last='true'` — NOT an EndLabel calc
+(see twb-authoring "Labeling only line ends": a label-dimension orphans the last
+point into a disconnected dot). Pick the floor so the final-period ranks are all
+distinct, or end-labels collide/cull (two members at the same clipped rank share
+a y and one label drops).
 
 ## 17. Histogram (distribution)
 No special bin XML needed — a calc dimension does it:

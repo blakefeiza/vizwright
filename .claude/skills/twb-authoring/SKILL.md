@@ -240,6 +240,62 @@ Common elements: `mark, cell, table, axis, pane, label, worksheet, zeroline,
 header, gridline, datalabel, title`. Kill gridlines by default; VOTD winners
 run near-zero gridline ink.
 
+### Mark opacity and size live in the PANE style, not the worksheet style
+
+`mark-transparency` is an opacity scale 0-255 (255 = fully opaque, 0 = invisible)
+and, like `size`, must be declared in a `<style>` inside the `<pane>` (after the
+`<customized-tooltip>`), NOT in the worksheet-level `<style>` — there it is
+silently ignored. Area marks are translucent by default (~60%), so on a dark
+canvas a near-white series renders grey until you set it:
+```xml
+<pane ...> ... <customized-tooltip>...</customized-tooltip>
+  <style><style-rule element='mark'>
+    <format attr='mark-transparency' value='255' />
+    <format attr='size' value='0.9' />   <!-- slider scale ~0-1.7, NOT pixels: 4 = huge blobs -->
+  </style-rule></style>
+</pane>
+```
+Use ~215 on dense scatter/strip dots so overlaps show density.
+
+### Pin column widths in a side-by-side row
+
+Children of a `param='horz'` layout-flow do NOT reliably honor their `w` split
+(live render: a 61800/38200 row came out 50/50, and one row collapsed a chart to
+a 110px sliver). Give the LEFT child `fixed-size='<px>' is-fixed='true'` (px of
+the 1500-wide canvas minus padding; ~906 for a golden split) and let the right
+child absorb the rest; keep the `w` values consistent across rows for D12.
+
+### Axis tick labels can truncate ("1000" -> "10..")
+
+Tableau sizes the axis gutter a few px too narrow for the widest tick, so a
+4-character top tick renders clipped. Keep axis ticks to 3 characters: plot a
+0-100 percentage (survivors as % of starters) instead of a 0-1000 count, and move
+the count to the tooltip.
+
+### Labeling only line ends (never a label-dimension calc)
+
+To label just the end of each line (bump charts, slopes, multi-series time
+lines), DO NOT create an `IF [Year]=max THEN [State] ELSE '' END` calc and put
+it on `<text>`. **A dimension on the Text/Label shelf enters the level of
+detail and partitions the marks** — a label field that is `''` for every point
+except the last splits each line into two partitions, so the last point breaks
+off as an isolated single-mark DOT disconnected from the line (looks like a
+1980→1990 "gap"). Instead put the line's existing identity field (the one
+already on `<lod>`, e.g. `[none:State:nk]`) on `<text>` too — same field, no new
+partition, line stays whole — and switch labels to line-end mode:
+```xml
+<style-rule element='mark'>
+  <format attr='mark-labels-show' value='true' />
+  <format attr='mark-labels-mode' value='line-ends' />
+  <format attr='mark-labels-line-first' value='false' />
+  <format attr='mark-labels-line-last' value='true' />
+  <format attr='mark-labels-cull' value='false' />
+</style-rule>
+```
+`mode='line-ends'` + `line-last='true'` labels the right end only;
+`line-first='true'` adds the left end. (`mode='all'` labels every point;
+`mode='range'` with `mark-labels-range-*` labels min/max.)
+
 ### Fixed mark color (single-hue bars — no color legend)
 
 ```xml

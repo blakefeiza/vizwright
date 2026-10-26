@@ -12,3 +12,7 @@ knowledge/xml-patterns/
 output/
 hyperd.log
 *.hyper
+
+# user projects stay local; only the superstore demo ships
+data/*
+!data/superstore.csv

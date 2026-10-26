@@ -10,6 +10,8 @@ Checks (E = error, W = warning):
   E5  dashboard worksheet zones reference existing worksheets
   E6  zone geometry: 0 <= x,y and x+w, y+h <= 100000; unique zone ids
   E7  <windows> references an existing dashboard/worksheet
+  E8  every datasource a worksheet view/dependencies names is declared at
+      workbook level (a typo'd id only fails at Tableau Cloud publish)
   W1  raw columns in dependencies missing from the datasource relation
       columns AND not defined as datasource <column> (calc fields)
 
@@ -89,8 +91,19 @@ def main(path_str: str) -> int:
 
         declared_instances: set[tuple[str, str]] = set()
         declared_raw: set[tuple[str, str]] = set()
+        for stub in view.findall("datasources/datasource"):
+            if stub.get("name", "") not in ds_names:
+                errors.append(
+                    f"E8 '{wname}': view uses datasource '{stub.get('name')}' that is not declared at "
+                    f"workbook level (declared: {sorted(ds_names)}) — Tableau Cloud fails to load it"
+                )
         for dep in view.findall("datasource-dependencies"):
             dsn = dep.get("datasource", "")
+            if dsn not in ds_names:
+                errors.append(
+                    f"E8 '{wname}': datasource-dependencies refer to undeclared datasource '{dsn}' "
+                    f"(declared: {sorted(ds_names)}) — Tableau Cloud fails to load it"
+                )
             for ci in dep.findall("column-instance"):
                 declared_instances.add((dsn, ci.get("name", "").strip("[]")))
             for c in dep.findall("column"):
