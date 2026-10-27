@@ -72,7 +72,9 @@ python3 tools/finalize_windows.py output/<name>.twb
 ```
 
 It rebuilds the whole block in canonical form from the workbook's own
-worksheets and dashboard zones. Then validate and package as usual.
+worksheets and dashboard zones. Worksheets used by a dashboard are written
+`hidden='true'`, so Tableau Server/Cloud shows one tab (the dashboard); pass
+`--keep-sheets` to show every sheet tab. Then validate and package as usual.
 
 Top-level order in real workbooks: `preferences, datasources, (actions),
 worksheets, dashboards, windows`. Omit `document-format-change-manifest`,

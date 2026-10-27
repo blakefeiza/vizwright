@@ -11,6 +11,10 @@ environment variables:
     TABLEAU_PAT_NAME     personal access token name
     TABLEAU_PAT_SECRET   personal access token secret
 
+The workbook is published under the dashboard's title (the last <dashboard
+name=...> in the twb), not the file slug; override with --name. Republishing
+the same dashboard overwrites it (same name + project).
+
 Usage:
     python3 tools/publish_render.py output/<run>.twbx --renders runs/<run>/renders
     python3 tools/publish_render.py output/<run>.twbx --project default --dashboard-only
@@ -53,6 +57,14 @@ def cloudify(twbx: Path) -> Path:
     return out
 
 
+def dashboard_title(twbx: Path) -> str | None:
+    """Name of the last dashboard in the package's twb (the one that opens first)."""
+    with zipfile.ZipFile(twbx) as z:
+        twb = next((n for n in z.namelist() if n.endswith(".twb")), None)
+        names = re.findall(r"<dashboard\b[^>]*?\bname='([^']+)'", z.read(twb).decode("utf-8")) if twb else []
+    return names[-1].replace("&apos;", "'").replace("&amp;", "&") if names else None
+
+
 def load_env() -> dict:
     env_file = ROOT / ".env"
     if env_file.exists():
@@ -72,6 +84,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("twbx", type=Path)
     ap.add_argument("--project", default="default", help="Tableau project name")
+    ap.add_argument("--name", default=None, help="workbook name on the server (default: the dashboard's title)")
     ap.add_argument("--renders", type=Path, default=None,
                     help="output dir for PNGs (default runs/<twbx-stem>/renders)")
     ap.add_argument("--dashboard-only", action="store_true",
@@ -102,7 +115,8 @@ def main() -> int:
         if project is None:
             sys.exit(f"project '{args.project}' not found; have: {[p.name for p in projects]}")
 
-        wb_item = tsc.WorkbookItem(project_id=project.id, show_tabs=True)
+        wb_name = args.name or dashboard_title(args.twbx) or publish_twbx.stem
+        wb_item = tsc.WorkbookItem(name=wb_name, project_id=project.id, show_tabs=True)
         wb = server.workbooks.publish(
             wb_item, str(publish_twbx), tsc.Server.PublishMode.Overwrite
         )

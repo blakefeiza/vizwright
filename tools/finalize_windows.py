@@ -7,8 +7,12 @@ worksheet used, and every worksheet needs its own <window class='worksheet'>
 with a standard <cards> block. Hand-authored workbooks that omit these load
 with Internal Error 2805CF18 (verified live, Desktop 2026.1).
 
+Worksheets that feed a dashboard are written hidden (hidden='true'), so
+Tableau Server/Cloud shows a single tab: the dashboard. A worksheet used by
+no dashboard stays visible. Pass --keep-sheets to show every sheet tab.
+
 Usage:
-    python3 tools/finalize_windows.py output/dashboard.twb
+    python3 tools/finalize_windows.py output/dashboard.twb [--keep-sheets]
 """
 
 import re
@@ -42,7 +46,7 @@ def esc(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace("'", "&apos;")
 
 
-def main(path_str: str) -> int:
+def main(path_str: str, keep_sheets: bool = False) -> int:
     path = Path(path_str)
     text = path.read_text()
     root = ET.fromstring(text)
@@ -68,9 +72,11 @@ def main(path_str: str) -> int:
     # manifest, which we intentionally omit. Worksheet windows take the
     # (cards, viewpoint?) branch; dashboard windows take
     # (viewpoints, active, device-preview).
+    in_dashboard = {z for _, zones in dashboards for z in zones}
     lines = ["  <windows source-height='30'>"]
     for ws in ws_names:
-        lines.append(f"    <window class='worksheet' name='{esc(ws)}'>")
+        hidden = " hidden='true'" if ws in in_dashboard and not keep_sheets else ""
+        lines.append(f"    <window class='worksheet'{hidden} name='{esc(ws)}'>")
         lines.append(CARDS)
         lines.append("    </window>")
     for i, (db, zones) in enumerate(dashboards):
@@ -97,13 +103,14 @@ def main(path_str: str) -> int:
     if n == 0:  # no existing block: insert before </workbook>
         new_text = text.replace("</workbook>", block + "\n</workbook>")
     path.write_text(new_text)
-    print(f"windows block rebuilt: {len(ws_names)} worksheet windows, "
+    print(f"windows block rebuilt: {len(ws_names)} worksheet windows ({0 if keep_sheets else len(in_dashboard & set(ws_names))} hidden), "
           f"{len(dashboards)} dashboard window(s) -> {path.name}")
     return 0
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if a != "--keep-sheets"]
+    if len(args) != 1:
         print(__doc__)
         sys.exit(2)
-    sys.exit(main(sys.argv[1]))
+    sys.exit(main(args[0], keep_sheets="--keep-sheets" in sys.argv))

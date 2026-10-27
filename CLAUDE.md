@@ -34,7 +34,9 @@ restarting; run state lives in `runs/<run>/`.
    those back to dashboard-designer for a spec revision, then re-run.
 4. **Render step**: if `.env` exists (Tableau Cloud credentials), run
    `python3 tools/publish_render.py output/<run>.twbx --dashboard-only`
-   — it publishes and drops rendered PNGs into `runs/<run>/renders/`.
+   — it publishes (workbook named after the dashboard title, one visible tab —
+   sheets are hidden by `finalize_windows.py`) and drops rendered PNGs into
+   `runs/<run>/renders/`.
    **Check its exit code**: non-zero means nothing exported — do NOT
    proceed to the linter against an empty `renders/` dir; treat as a
    stage-3 bug. Otherwise fall back to the manual path: ask the user to
